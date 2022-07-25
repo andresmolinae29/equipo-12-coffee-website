@@ -4,7 +4,7 @@
 
 ### Andres Molina
 
-> Desarrollador...
+> Desarrollador en python hace dos años, con conocimientos en machine learning y análisis de datos y queriendo ser desarrollador full stack
 
 ### Zharit Seija
 
