@@ -1,2 +1,5 @@
 fuentes referencia:
 https://fonts.google.com/specimen/Nunito#type-tester
+https://fonts.google.com/specimen/Cormorant+SC?query=cormorant
+https://fonts.google.com/specimen/Amatic+SC?query=cormorant
+https://fonts.google.com/specimen/Elsie?query=ale
