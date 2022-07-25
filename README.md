@@ -13,6 +13,7 @@
 ### Julian Maccio
 
 ### Jeysson Pino
+> Actualmente realizando el ingreso para tecnico en desarrollo web, y ademas intentando ser un desarrollador web full stack.
 
 ## oferta de productos ofrecidos en el sitio
 
