@@ -31,3 +31,29 @@
 1. El uso de café especializado y descripciones muy completas para atraer al consumidor.
 2. La estrategia de impactar por medio del blog y la asesoria personalizada sera el impacto principal de atraccion al publico escogido.
 3. Recetas e informacion general del café.
+
+## Referentes
+> Home
+https://www.behance.net/gallery/146995601/Coffee-shop-website
+https://bluebottlecoffee.com/	https://www.brokenchains.com.co/
+https://kicks.com.co/ (Tienen un blog que nos puede servir como base)
+https://www.whittard.com/
+
+> Página del producto
+https://s3.envato.com/files/158960854/Preview%201.2.1/6.Product_Fullwidth.jpg
+https://s3.envato.com/files/158960854/Preview%201.2.1/7.Product_Boxed.jpg
+https://kicks.com.co/nike-air-force-1-07-cw2288-111-zapatillas-casual.html
+https://www.bookdepository.com/es/Los-n%C3%BAmeros-no-mienten-71-historias-para-entender-el-mundo-Vaclav-Smil/9788418056352
+https://www.mattelsa.net/hombre/jeans-carrot-fit-azul-hielo-lavanderia-63659
+
+> Carrito
+https://s3.envato.com/files/158960854/Preview%201.2.1/12.Cart_Mini.jpg
+https://s3.envato.com/files/158960854/Preview%201.2.1/13.Cart_Standard.jpg
+https://cafedelirante.com.ar/tienda/
+https://bierhaus.co/producto/worldwide-2-ipa-x12/ en bierhaus si vas scrolleando en un item product te hace un "footer" anclado abajo de todo con un counter y un add button
+https://www.mattelsa.net/ (No te lleva a otra pagina)
+
+> Registro y login
+https://cafedelirante.com.ar/
+https://www.mattelsa.net/ (No te lleva a otra pagina) el cuadro de login como "popup" o prompt supongo que se hace poniendolo en el head y que se muestre u oculte, lo que sí no sé es cómo hacer que se actualice con las credenciales correctas;
+https://bierhaus.co/
