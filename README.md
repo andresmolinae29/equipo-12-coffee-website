@@ -14,7 +14,7 @@
 
 ### Jeysson Pino
 
-## oferta de productos ofrecidos en el sitio
+## Oferta de productos ofrecidos en el sitio
 
 1. Venta de de productos relacionados al café y sus derivados
 2. Asesoria personalizada
