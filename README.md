@@ -33,27 +33,27 @@
 3. Recetas e informacion general del café.
 
 ## Referentes
-> Home
-https://www.behance.net/gallery/146995601/Coffee-shop-website
-https://bluebottlecoffee.com/	https://www.brokenchains.com.co/
-https://kicks.com.co/ (Tienen un blog que nos puede servir como base)
-https://www.whittard.com/
+> ### Home
+1. https://www.behance.net/gallery/146995601/Coffee-shop-website
+2. https://bluebottlecoffee.com/	https://www.brokenchains.com.co/
+3. https://kicks.com.co/ (Tienen un blog que nos puede servir como base)
+4. https://www.whittard.com/
 
-> Página del producto
-https://s3.envato.com/files/158960854/Preview%201.2.1/6.Product_Fullwidth.jpg
-https://s3.envato.com/files/158960854/Preview%201.2.1/7.Product_Boxed.jpg
-https://kicks.com.co/nike-air-force-1-07-cw2288-111-zapatillas-casual.html
-https://www.bookdepository.com/es/Los-n%C3%BAmeros-no-mienten-71-historias-para-entender-el-mundo-Vaclav-Smil/9788418056352
-https://www.mattelsa.net/hombre/jeans-carrot-fit-azul-hielo-lavanderia-63659
+> ### Página del producto
+1. https://s3.envato.com/files/158960854/Preview%201.2.1/6.Product_Fullwidth.jpg
+2. https://s3.envato.com/files/158960854/Preview%201.2.1/7.Product_Boxed.jpg
+3. https://kicks.com.co/nike-air-force-1-07-cw2288-111-zapatillas-casual.html
+4. https://www.bookdepository.com/es/Los-n%C3%BAmeros-no-mienten-71-historias-para-entender-el-mundo-Vaclav-Smil/9788418056352
+5. https://www.mattelsa.net/hombre/jeans-carrot-fit-azul-hielo-lavanderia-63659
 
-> Carrito
-https://s3.envato.com/files/158960854/Preview%201.2.1/12.Cart_Mini.jpg
-https://s3.envato.com/files/158960854/Preview%201.2.1/13.Cart_Standard.jpg
-https://cafedelirante.com.ar/tienda/
-https://bierhaus.co/producto/worldwide-2-ipa-x12/ en bierhaus si vas scrolleando en un item product te hace un "footer" anclado abajo de todo con un counter y un add button
-https://www.mattelsa.net/ (No te lleva a otra pagina)
+> ### Carrito
+1. https://s3.envato.com/files/158960854/Preview%201.2.1/12.Cart_Mini.jpg
+2. https://s3.envato.com/files/158960854/Preview%201.2.1/13.Cart_Standard.jpg
+3. https://cafedelirante.com.ar/tienda/
+4. https://bierhaus.co/producto/worldwide-2-ipa-x12/ en bierhaus si vas scrolleando en un item product te hace un "footer" anclado abajo de todo con un counter y un add button
+5. https://www.mattelsa.net/ (No te lleva a otra pagina)
 
-> Registro y login
-https://cafedelirante.com.ar/
-https://www.mattelsa.net/ (No te lleva a otra pagina) el cuadro de login como "popup" o prompt supongo que se hace poniendolo en el head y que se muestre u oculte, lo que sí no sé es cómo hacer que se actualice con las credenciales correctas;
-https://bierhaus.co/
+> ### Registro y login
+1. https://cafedelirante.com.ar/
+2. https://www.mattelsa.net/ (No te lleva a otra pagina) el cuadro de login como "popup" o prompt supongo que se hace poniendolo en el head y que se muestre u oculte.
+3. https://bierhaus.co/
