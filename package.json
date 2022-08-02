@@ -1,0 +1,24 @@
+{
+  "name": "equipo-12-coffee-website",
+  "version": "1.0.0",
+  "description": "## Integrantes del grupo:",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andresmolinae29/equipo-12-coffee-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andresmolinae29/equipo-12-coffee-website/issues"
+  },
+  "homepage": "https://github.com/andresmolinae29/equipo-12-coffee-website#readme"
+}
