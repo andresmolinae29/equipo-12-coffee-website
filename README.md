@@ -57,3 +57,7 @@
 1. https://cafedelirante.com.ar/
 2. https://www.mattelsa.net/ (No te lleva a otra pagina) el cuadro de login como "popup" o prompt supongo que se hace poniendolo en el head y que se muestre u oculte.
 3. https://bierhaus.co/
+
+> ### Ruta trello
+
+https://trello.com/b/NHfqrmry/digitalhouse
