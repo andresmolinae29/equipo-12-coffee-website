@@ -212,6 +212,51 @@ form input, form label select {
 
 }
 
+footer {
+    /* padding-top: 80px; */
+    background-color: white;
+    /* margin-left: 10px;
+    margin-right: 10px; */
+}
+
+footer .cont-footer-uno img {
+    margin: auto;
+    width: 120px;
+}
+
+footer .contenedor-footer{
+    padding-top: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+footer .copyright {
+    display: block;
+    border-top: 1px solid black;
+    text-align: center;
+    margin-top: 5px;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+footer .cont-footer-uno {
+    display: flex;
+    flex-direction: column;
+}
+
+/* footer .cont-footer-uno p, 
+footer .cont-footer-uno i {
+    display: flex;
+    width: 25%;
+    flex-wrap: wrap;
+    flex: auto;
+    margin: auto;
+} */
+
 @media (min-width: 361px){
 
     header {
