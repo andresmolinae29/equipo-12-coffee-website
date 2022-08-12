@@ -11,6 +11,7 @@
 > Estudio arquitectura, sociología y ahora... programación. Manejo adobe creative cloud y otros programas relacionados al diseño visual y de diseño de estructuras (construcción).
 
 ### Julian Maccio
+> Me encuentro trabajando hace más de cinco años en el área administrativa de cobranzas, comenzando hace unos pocos años en el mundo de la programación, con vistas a ser un front-end dev.
 
 ### Jeysson Pino
 > Actualmente realizando el ingreso para tecnico en desarrollo web, y ademas intentando ser un desarrollador web full stack.

@@ -1,0 +1,79 @@
+:root {
+    --cremita: rgb(240, 240, 228);
+    --negro: rgb(26, 26, 26);
+    --gris: rgb(187, 187, 187);
+}
+*{
+    box-sizing: border-box;
+    font-family: Nunito;
+}
+body{
+    background-color: var(--cremita);
+    padding: 75px;
+}
+.container{
+    margin: 20px auto;
+    padding: 5px;
+    width: 400px;
+    height: 400px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+ h1{
+    width: 50%;
+    color: var(--gris);
+    font-size: 36px;
+    margin: 32px auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+form{
+    /*padding: 15px;*/
+    text-align: center;
+}
+input{
+    padding: 12px 0;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border: 2px solid transparent;
+    text-align: center;
+    width: 90%;
+    font-size: 16px;
+    transition: border .2s, background-color .2s;
+}
+form .field{
+    background-color: whitesmoke;
+}
+h5{
+    width: 50%;
+    font-size: 16px;
+    text-align: center;
+    color: var(--negro);
+}
+
+form .btn{
+    background-color: #3498DB;
+    color: #fff;
+    line-height: 25px;
+    cursor: pointer;
+}
+form .btn:hover,
+form .btn:active {
+    background-color: #1F78B4;
+    border: 2px solid #1F78B4;
+}
+
+h6{
+    width: 50%;
+    font-size: 16px;
+    margin: 10px auto;
+    text-align: center;
+    color: var(--negro);
+}
+.madeby {
+    font-size: 10px;
+    opacity: 0.5;
+    color: var(--gris);
+    text-align: center;
+
+}
