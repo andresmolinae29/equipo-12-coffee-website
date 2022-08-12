@@ -1,11 +1,8 @@
 const express = require('express');
 const app = express();
-app.use(express.static('public'));
+const publicPath = path.resolve(__dirname, './public');
 
-
-app.listen(3001, ()=>{
-    console.log('Servidor funcionando');
-});
+app.use( express.static(publicPath) );  
 
 app.get('/', (req,res)=>{
     res.sendFile(__dirname + '/views/home.html');
@@ -17,4 +14,11 @@ app.get('/login', (req,res)=>{
 
 app.get('/register', (req,res)=>{
     res.sendFile(__dirname + '/views/register.html');
+});
+app.get('/carrito', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/cart.html'));
+});
+
+app.listen(3001, () => {
+    console.log('Servidor corriendo en el puerto 3001');
 });

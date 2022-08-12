@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cartStyle.css">
+    <script src="https://kit.fontawesome.com/5cc45362ff.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header class = "contenedor-header">
+        <img src="images/logoDH.png" alt="logo" class="log-image">
+        <nav class = "contenedor-nav">
+            <ul class = "caja-uno">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Conócenos</a></li>
+                <li><a href="#">Café</a></li>
+                <li><a href="#">Menú</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+            <ul class = "caja-dos">
+                <li><a href="#">Carrito</a></li>
+                <li>2</li>
+                <li><a href="#">Entra</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h4>
+            Carrito
+        </h4>
+        <div class="capsula-carrito">
+            <table class="tabla-carrito">
+                <tr>
+                    <th>Item</th>
+                    <th>Detalle</th>
+                    <th>Opcion</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td><img scr="" alt="image"></td>
+                    <td>xxxxxx</td>
+                    <td>xxxxxx</td>
+                    <td>$$$</td>
+                    <td>1</td>
+                    <td>$$$$</td>
+                </tr>
+                <tr>
+                    <td><img scr="" alt="image"></td>
+                    <td>xxxxxx</td>
+                    <td>xxxxxx</td>
+                    <td>$$$</td>
+                    <td>1</td>
+                    <td>$$$$</td>
+                </tr>
+            </table>
+        </div>
+        <div class="contenedor-section">
+            <div class="caja-uno">
+                <h5>
+                    Cupon
+                </h5>
+                <form action="/cupon" method="post">
+                    <input type="text" name="cupon">
+                    <input class="button-class" type="submit" name="enviar" value="Aplicar">
+                </form>
+            </div>
+            <div class="caja-dos">
+                <h5>
+                    Calculadora de envio
+                </h5>
+                <form action="/cost-envio" method="post">
+                    <label name="pais">
+                        <select name="pais" selected="Pais">
+                            <option value="col">Colombia</option>
+                        </select>
+                    </label>
+                    <input class="input-class" type="text" name="ciudad">
+                    <input class="input-class" type="number" name="codigo-postal">
+                    <input class="button-class" type="submit" name="enviar" value="Calcular">
+                </form>
+            </div>
+            <div class="caja-tres">
+                <table class="subtotal-table">
+                    <tr>
+                        <th>Subtotal</th>
+                        <td>$$$</td>
+                    </tr>
+                    <tr>
+                        <th>Envio</th>
+                        <td>$$$</td>
+                    </tr>
+                    <tr>
+                        <th>Impuestos</th>
+                        <td>$$$</td>
+                    </tr>
+                    <tr>
+                        <th>Total</th>
+                        <td>$$$</td>
+                    </tr>
+                  </table>
+                  <form action="/pago" method="post">
+                    <input class="button-pay" type="submit" name="enviar" value="Continuar con el pago">
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+
+    </footer>
+</body>
+</html>
