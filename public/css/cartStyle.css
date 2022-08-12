@@ -215,6 +215,7 @@ form input, form label select {
 footer {
     /* padding-top: 80px; */
     background-color: white;
+    /* margin-right: 15%; */
     /* margin-left: 10px;
     margin-right: 10px; */
 }
@@ -222,15 +223,40 @@ footer {
 footer .cont-footer-uno img {
     margin: auto;
     width: 120px;
+    align-items:baseline;
+    margin: auto;
 }
 
-footer .contenedor-footer{
+footer .contenedor-footer {
     padding-top: 80px;
     display: flex;
     justify-content: space-around;
-    align-items: flex-end;
+    align-items:center;
     margin-bottom: 30px;
     flex-wrap: wrap;
+    /* margin-right: 15%; */
+}
+
+footer .cont-footer-uno {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0.5;
+}
+
+footer .cont-footer-base {
+    display: flex;
+    /* width: 25%; */
+    flex-wrap: wrap;
+    margin: auto;
+    flex-direction: row;
+    align-items: center;
+    margin: auto;
+    padding: 2px;
+}
+
+footer .cont-footer-base p,
+footer .cont-footer-base i {
+    padding: 4px;
 }
 
 footer .copyright {
@@ -243,19 +269,40 @@ footer .copyright {
     flex-wrap: wrap;
 }
 
-footer .cont-footer-uno {
-    display: flex;
-    flex-direction: column;
+footer .contenedor-footer h4 {
+    padding-bottom: 5px;
 }
 
-/* footer .cont-footer-uno p, 
-footer .cont-footer-uno i {
+footer .cont-footer-dos {
     display: flex;
-    width: 25%;
+    justify-items:stretch;
+    justify-content:space-around;
+    flex-grow: 0.5;
+    flex-direction: row;
     flex-wrap: wrap;
-    flex: auto;
+}
+
+/* footer .cont-footer-dos div {
+    padding-right: 10px;
     margin: auto;
 } */
+
+footer .cont-footer-tres {
+    display: flex;
+    justify-items:stretch;
+    justify-content: space-around;
+    flex-grow: 0.5;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+footer .cont-footer-tres img {
+    width: 10px;
+}
+
+.cont-footer-base i {
+    font-size: 30px;
+}
 
 @media (min-width: 361px){
 
@@ -338,5 +385,9 @@ footer .cont-footer-uno i {
     .contenedor-section .caja-tres
     {
         margin: 0;
+    }
+
+    footer .contenedor-footer {
+        margin-right: 15%;
     }
 }
