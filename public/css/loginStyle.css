@@ -1,14 +1,13 @@
 :root {
-    --cremita: rgb(240, 240, 228);
-    --negro: rgb(26, 26, 26);
-    --gris: rgb(187, 187, 187);
+    --cremita: rgb(240, 240, 184);
+    --gris: rgb(177, 177, 177);
 }
 *{
     box-sizing: border-box;
     font-family: Nunito;
 }
 body{
-    background-color: var(--cremita);
+    background-color: rgb(221, 221, 221);
     padding: 75px;
 }
 .container{
@@ -16,51 +15,56 @@ body{
     padding: 5px;
     width: 400px;
     height: 400px;
-    background-color: whitesmoke;
+    background-color: var(--gris);
     border-radius: 10px;
-}
+} 
  h1{
     width: 50%;
-    color: var(--gris);
+    color: rgb(39, 39, 39);
     font-size: 36px;
     margin: 32px auto;
     margin-bottom: 20px;
     text-align: center;
 }
 form{
-    /*padding: 15px;*/
     text-align: center;
 }
 input{
-    padding: 12px 0;
+    padding: 12px 0; 
     margin-bottom: 10px;
     border-radius: 3px;
     border: 2px solid transparent;
     text-align: center;
-    width: 90%;
+    display: 100%;
     font-size: 16px;
-    transition: border .2s, background-color .2s;
-}
+    transition: border .2s, background-color .3s;
+} 
 form .field{
     background-color: whitesmoke;
+    width: 65%;
 }
 h5{
     width: 50%;
     font-size: 16px;
     text-align: center;
-    color: var(--negro);
+    color: black;
 }
 
 form .btn{
-    background-color: #3498DB;
+    background-color: black;
     color: #fff;
     line-height: 25px;
     cursor: pointer;
+    width: 65%;
 }
-form .btn:hover,
+form .btn:hover {
+    background-color: #888888;
+    border: 2px solid #6e6e6e;
+}
+
 form .btn:active {
-    background-color: #1F78B4;
-    border: 2px solid #1F78B4;
+    background-color: black;
+    border: 2px solid #6e6e6e;
 }
 
 h6{
@@ -68,12 +72,5 @@ h6{
     font-size: 16px;
     margin: 10px auto;
     text-align: center;
-    color: var(--negro);
-}
-.madeby {
-    font-size: 10px;
-    opacity: 0.5;
-    color: var(--gris);
-    text-align: center;
-
+    color: black;
 }
