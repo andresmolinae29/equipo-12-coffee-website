@@ -1,0 +1,368 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: white;
+}
+
+ h1{
+    width: 50%;
+    color: rgb(39, 39, 39);
+    font-size: 36px;
+    margin: 32px auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form{
+    text-align: center;
+}
+
+.input-container {
+    position: relative;
+    height: 45px;
+    width: 90%;
+    margin-bottom: 17px;
+  }
+
+.input-select {
+    position: relative;
+    height: 45px;
+    width: 105%;
+    margin: 17px;
+    padding-left: 55px;
+    
+}
+
+input{
+
+    position: relative;
+    border: 1px solid #DADCE0;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 12px;
+    outline: none;
+    background: none;
+    z-index: 1;
+    transition: border .2s, background-color .3s;
+    border: 2px solid transparent;
+
+} 
+
+::placeholder {
+    color: gray
+}
+input:focus::placeholder {
+    color: transparent;
+    transition: 0.4s;
+}
+
+.label-input {
+    position: absolute;
+    top: 15px;
+    left: 25%;
+    padding: 0 4px;
+    background-color: white;
+    color: #DADCE0;
+    font-size: 16px;
+    transition: 0.7s;
+    z-index: 0;
+  }
+
+input:focus + .label-input {
+    top: -7px;
+    z-index: 3;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    background-color: transparent;
+    border-radius: 3px;
+  }
+
+
+form .field{
+    background-color: whitesmoke;
+    width: 60%;
+}
+/*
+select{
+    background: whitesmoke;
+    color: #000;
+    appearance: none;
+    height: 2rem;
+    width: 60%;
+    font-size: 16px;
+    border-radius: 3px;
+} */
+
+/*
+.columna-form:not(.btn-regis) {
+    float: left;
+    width: 50%;    
+  } */
+
+.btn-regis{
+    background-color: black;
+    color: #fff;
+    line-height: 25px;
+    margin-left: 35%;
+    cursor: pointer;
+    width: 25%;
+    margin-top: 3%;
+    margin-right: 35%;
+    text-align: center;
+    
+}
+.btn-regis:hover {
+    background-color: #888888;
+    border: 2px solid #6e6e6e;
+}
+
+.btn-regis:active {
+    background-color: black;
+    border: 2px solid #6e6e6e;
+}
+
+.contenedor-nav ul li a{
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    padding: 7px 7px;
+    font-size: 17px;
+}
+
+.contenedor-nav ul li{
+    list-style-type: none;
+    margin: auto;
+} 
+
+header {
+    margin: auto;
+    padding: 20px;
+
+}
+
+header img {
+    width: 150px;
+}
+
+.contenedor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.contenedor-header img {
+    flex-grow: 30%;
+    justify-content: center;
+    text-align: center; 
+    margin: auto;
+}
+
+header .contenedor-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.contenedor-nav {
+    flex-grow: 0.60;
+    justify-content: space-between;
+    align-self: center;
+    flex-wrap: wrap;
+}
+
+.contenedor-header .caja-uno {
+    display: flex;
+    /* padding: 10px 50px; */
+    border-radius: 30px;
+    background-color: white;
+    border-color: white;
+    justify-content: center;
+    text-align: center; 
+    margin: auto;
+    flex-direction: column;
+}
+
+.contenedor-header .caja-dos {
+    display: flex;
+    align-items:flex-end;
+    justify-content: center;
+    text-align: center; 
+    margin: auto;
+}
+
+footer {
+    background-color: white;
+}
+
+footer .cont-footer-uno img {
+    margin: auto;
+    width: 120px;
+    align-items:baseline;
+    margin: auto;
+}
+
+footer .contenedor-footer {
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+footer .cont-footer-uno {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0.5;
+}
+
+footer .cont-footer-base {
+    display: flex;
+    /* width: 25%; */
+    flex-wrap: wrap;
+    margin: auto;
+    flex-direction: row;
+    align-items: center;
+    margin: auto;
+    padding: 2px;
+}
+
+footer .cont-footer-base p,
+footer .cont-footer-base i {
+    padding: 4px;
+}
+
+footer .copyright {
+    display: block;
+    border-top: 1px solid black;
+    text-align: center;
+    margin-top: 5px;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+footer .contenedor-footer h4 {
+    padding-bottom: 5px;
+}
+
+footer .cont-footer-dos {
+    display: flex;
+    justify-items:stretch;
+    justify-content:space-around;
+    flex-grow: 0.5;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+footer .cont-footer-tres {
+    display: flex;
+    justify-items:stretch;
+    justify-content: space-around;
+    flex-grow: 0.5;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+footer .cont-footer-tres img {
+    width: 10px;
+}
+
+.cont-footer-base i {
+    font-size: 30px;
+}
+
+
+@media (min-width: 361px){
+
+    header {
+        margin: auto;
+        padding: 50px 50px;
+    
+    }
+
+    .contenedor-header{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .contenedor-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .contenedor-header img {
+        flex-grow: 30%;
+        justify-content: center;
+        text-align: center; 
+        margin: auto;
+    }
+
+    .input-select {
+        width: 102%;
+        margin-left: 26px;
+    }
+
+    .container{
+        margin: 20px auto;
+        padding: 5px;
+        width: 450px;
+        height: 700px;
+        background-color: gainsboro;
+        border-radius: 10px;
+    } 
+
+    
+
+}
+
+@media (min-width: 769px){
+
+    .contenedor-header{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .contenedor-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .contenedor-header .caja-uno {
+        flex-direction: row;
+        margin-left: 5%;
+    }
+
+    .contenedor-header .caja-dos {
+        justify-content: left;
+        text-align: left;
+        align-items:flex-start;
+        margin: 0px;
+    }
+
+    .contenedor-header img {
+        margin: 0;
+    }
+    .container{
+        margin: 20px auto;
+        padding: 5px;
+        width: 800px;
+        height: 450px;
+        background-color: gainsboro;
+        border-radius: 10px;
+    } 
+
+    footer .contenedor-footer {
+        margin-right: 15%;
+    }
+    .columna-form:not(.btn-regis) {
+        float: left;
+        width: 50%;    
+      }
+}
