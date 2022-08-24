@@ -1,0 +1,297 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #ebebeb;
+}
+
+header {
+    margin: auto;
+    padding: 20px;
+
+}
+
+header img {
+    width: 150px;
+    /* width: 20%; */
+}
+
+.contenedor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.contenedor-header img {
+    flex-grow: 30%;
+    justify-content: center;
+    text-align: center; 
+    margin: auto;
+}
+
+header .contenedor-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.contenedor-nav {
+    flex-grow: 0.60;
+    justify-content: space-between;
+    align-self: center;
+    flex-wrap: wrap;
+}
+
+.contenedor-header .caja-uno {
+    display: flex;
+    padding: 10px 50px;
+    border-radius: 30px;
+    background-color: white;
+    border-color: white;
+    justify-content: center;
+    text-align: center; 
+    margin: auto;
+    flex-direction: column;
+}
+
+.contenedor-header .caja-dos {
+    display: flex;
+    align-items:flex-end;
+    justify-content: center;
+    text-align: center; 
+    margin: auto;
+    /* flex-direction: column; */
+}
+
+.contenedor-nav ul li a{
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    padding: 7px 7px;
+    font-size: 17px;
+}
+
+.contenedor-nav ul li{
+    list-style-type: none;
+    margin: auto;
+} 
+
+section {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+section h4 {
+    font-size: 20px;
+    font-style: normal;
+    padding-bottom: 10px;
+}
+
+.tabla-carrito {
+    
+    background-color: white;
+    /* margin: auto; */
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom: 1px solid white;
+    table-layout: fixed;
+}
+
+.tabla-carrito th {
+    padding: 15px;
+    padding-top: 25px;
+    border-bottom: 1px solid black;
+  }
+
+.tabla-carrito td {
+    padding: 60px 40px;
+}
+
+.tabla-carrito tr td {
+    border-bottom: 1px solid black;
+    width: 8px;
+}
+
+.tabla-carrito tr:last-child
+{
+   border-bottom: none;
+   padding: 0;
+}
+
+.tabla-carrito tr td:hover {
+    background-color: #D6EEEE;
+}
+
+.tabla-carrito tr { 
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0.5em 0;
+}
+
+.tabla-carrito td, th {
+    flex: 1 1 150px;
+}
+
+.capsula-carrito {
+    padding-bottom: 30px;
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: white;
+}
+
+form input, form label select {
+    margin-top: 4px;
+    background-color: rgba(128, 128, 128, 0.5);
+    height: 25px;
+    border-radius: 2px;
+    border-width: 0px;
+}
+
+.button-class {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    width: fit-content;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.contenedor-section {
+    padding-top: 20px;
+    margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 30px;
+}
+
+.contenedor-section h5 {
+    padding-bottom: 5px;
+}
+
+.contenedor-section .caja-uno,
+.contenedor-section .caja-dos,
+.contenedor-section .caja-tres
+ {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0.30;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.caja-dos form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.caja-dos form label select {
+    width: 100%;
+}
+
+.subtotal-table {
+    /* margin: auto; */
+    /* width: 100%; */
+    /* border-collapse: collapse; */
+    border-bottom: 0px solid white;
+    table-layout:fixed;
+}
+
+.button-pay {
+    width: 100%;
+    margin-top: 15px;
+    background-color: white;
+    color: #000;
+
+}
+
+@media (min-width: 361px){
+
+    header {
+        margin: auto;
+        padding: 50px 50px;
+    
+    }
+
+    .contenedor-header{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .contenedor-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .contenedor-header img {
+        flex-grow: 30%;
+        justify-content: center;
+        text-align: center; 
+        margin: auto;
+    }
+
+    .tabla-carrito tr { 
+        display: flex; 
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0.5em 0;
+    }
+
+    .tabla-carrito td, th {
+    flex: 1 1 150px;
+    }
+
+    .contenedor-section{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width: 769px){
+
+    .contenedor-header{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .contenedor-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .contenedor-header .caja-uno {
+        flex-direction: row;
+        margin-left: 5%;
+    }
+
+    .contenedor-header .caja-dos {
+        justify-content: left;
+        text-align: left;
+        align-items:flex-start;
+        margin: 0px;
+    }
+
+    .contenedor-header img {
+        margin: 0;
+    }
+
+    .contenedor-section{
+        justify-content: space-between;
+        flex: 1;
+    }
+
+    .contenedor-section .caja-uno,
+    .contenedor-section .caja-dos,
+    .contenedor-section .caja-tres
+    {
+        margin: 0;
+    }
+}
