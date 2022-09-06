@@ -2,28 +2,15 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const publicPath = path.resolve(__dirname, './public');
+const indexRouter = require("./routes/mainRoutes");
 
-app.use( express.static(publicPath) );  
+app.use( express.static(publicPath) );
 
-app.get('/', (req,res)=>{
-    res.sendFile(__dirname + '/views/home.html');
-});
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 
-app.get('/login', (req,res)=>{
-    res.sendFile(__dirname + '/views/login.html');
-});
+app.use("/", indexRouter);
 
-app.get('/register', (req,res)=>{
-    res.sendFile(__dirname + '/views/register.html');
-});
-app.get('/carrito', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/cart.html'));
-});
-
-app.get('/item', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/item.html'));
-});
-
-app.listen(3001, () => {
-    console.log('Servidor corriendo en el puerto 3001');
-});
+app.listen(3000, ()=>{
+    console.log('Servidor funcionando');
+  });
