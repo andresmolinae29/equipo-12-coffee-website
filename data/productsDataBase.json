@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "name": "17ft Ceiling Espresso",
+        "description": "Caramelo, almendra, cereza seca",
+        "size": "12oz",
+        "price": 21.0,
+        "category": "espresso",
+        "img": "img-ceiling-espresso.jpg",
+        "longDescription": "Café orgánico de alta calidad para hacer un espresso fuerte, con mucha crema y sin pretensiones",
+        "discount": 0,
+        "sellingCategory": "new"
+    },
+    {
+        "id": 2,
+        "name": "Dandy Espresso",
+        "description": "Zesty, eloquent, refreshing",
+        "size": "6oz",
+        "price": 13.5,
+        "category": "espresso",
+        "img": "img-dandy-espresso.jpg",
+        "longDescription": "Café con una base consistente de café colombiano, esta mezcla es delicada, refrescante y exuberante, como un día soleado, o una fiesta en la playa",
+        "discount": 0,
+        "sellingCategory": "new"
+    },
+    {
+        "id": 3,
+        "name": "Hayes Valley Espresso",
+        "description": "Sabroso, elocuente, refrescante.",
+        "size": "12oz",
+        "price": 21.0,
+        "category": "espresso",
+        "img": "img-default.jpg",
+        "longDescription": "Café de tono más bajo y mínimamente brillante, Hayes Valley Espresso ofrece un trago directo con una voluptuosa crema rojiza y una viscosidad de aspecto un tanto peligroso. La leche, en cualquier cantidad, agrega romance a los aspectos melancólicos del café, resaltando el chocolate inherente y agregando un toque suave y redondeado.",
+        "discount": 0.10,
+        "sellingCategory": "sale"
+    },
+    {
+        "id": 4,
+        "name": "Opascope Espresso",
+        "description": "Jugoso, vibrante, limpio",
+        "size": "12oz",
+        "price": 23.0,
+        "category": "espresso",
+        "img": "img-opascope-espresso.jpg",
+        "longDescription": "Opascope Espresso es una adición refrescante a una línea que alguna vez estuvo dominada por selecciones densas y chocolatadas. Produce un trago efervescente, repleto de rayas de tropicalia.",
+        "discount": 0,
+        "sellingCategory": "new"
+    },
+    {
+        "id": 5,
+        "name": "Costa Rica Rivense H17 Natural",
+        "description": "Fresa deshidratada, azúcar moreno, pomelo",
+        "size": "6oz",
+        "price": 29.0,
+        "category": "single origin",
+        "img": "img-costa-origin.jpg",
+        "longDescription": "Café naturalmente este lote permitiendo que las cualidades genéticas brillen en su perfil de sabor",
+        "discount": 0,
+        "sellingCategory": "limit-offer"
+    },
+    {
+        "id": 6,
+        "name": "Costa Rica La Lia Gesha Ethiopia Black Honey",
+        "description": "Compota de cereza, rosa, ciruela",
+        "size": "6oz",
+        "price": 27.0,
+        "category": "single origin",
+        "img": "img-lalia-espresso.jpg",
+        "longDescription": "Este café tiene una profundidad de complejidad, en parte debido a su procesamiento intrincado e inusual, pero también por los destellos de Gesha mezclados en el lote. Por sí solo, Gesha exuda aromas florales; mezclado con variedades tradicionales de Etiopía, como se ve aquí, el aroma se respira como un ramo completo terminado con rosas. Para el gusto, una mermelada dulce tiene capas de cítricos y frutas de hueso, bien equilibradas y brillantes.",
+        "discount": 0,
+        "sellingCategory": "limit-offer"
+    },
+    {
+        "id": 7,
+        "name": "Burundi Kayanza Heza Natural",
+        "description": "Mora, hierba de limón, pasas doradas",
+        "size": "6oz",
+        "price": 27.0,
+        "category": "single origin",
+        "img": "img-burundi-espresso.jpg",
+        "longDescription": "Los cafés naturales de Heza son frutales y mermelada como cabría esperar de este método de procesamiento, al tiempo que mantienen una cantidad inusualmente alta de su carácter y complejidad inherentes.",
+        "discount": 0,
+        "sellingCategory": "new"
+    },
+    {
+        "id": 8,
+        "name": "Bella Donova",
+        "description": "Frambuesa, chocolate, melaza",
+        "size": "12oz",
+        "price": 21.0,
+        "category": "blend",
+        "img": "img-bella-espresso.jpg",
+        "longDescription": "Nuestra mezcla más popular, Bella, es una variación de la combinación arquetípica Moka-Java, en la que los granos de café etíope naturales silvestres y mermelado encuentran el equilibrio con cafés más sustantivos de Sumatra y Perú. Se encuentra en el lado más oscuro de las cosas, resiste bien los rigores de la máquina automática de goteo y resiste la leche o la crema, aunque es igual de elegante en negro.",
+        "discount": 0,
+        "sellingCategory": "new"
+    },
+    {
+        "id": 9,
+        "name": "New Orleans Style Coffee and Chicory",
+        "description": "El café y la achicoria molida que necesitas para hacer nuestra NOLA en casa",
+        "size": "12oz",
+        "price": 21.0,
+        "category": "blend",
+        "img": "img-orleans-espresso.jpg",
+        "longDescription": "Para hacer nuestra NOLA en casa, ofrecemos nuestra mezcla de café al estilo de Nueva Orleans y achicoria molida en grano entero, y una receta para comenzar. Solo agregas la leche, el azúcar, el hielo y un poco de tiempo.",
+        "discount": 0.2,
+        "sellingCategory": "sale"
+    },
+    {
+        "id": 10,
+        "name": "Night Light Decaf",
+        "description": "Crema brule, vainilla, lima",
+        "size": "6oz",
+        "price": 13.5,
+        "category": "blend",
+        "img": "img-night-espresso.jpg",
+        "longDescription": "Dulce y gratificante, está descafeinado con el alucinante Swiss Water Process libre de químicos. Sorprendentemente versátil, este descafeinado funciona bien en casi todos los métodos de preparación, desde espresso hasta vertido; nuestro equipo de café lo describe como cremoso y versátil con ricos matices de malta.",
+        "discount": 0.2,
+        "sellingCategory": "sale"
+    }
+]
