@@ -3,8 +3,10 @@ const app = express();
 const path = require('path');
 const methodOverride =  require('method-override');
 const logMiddleware = require('./middlewares/logMiddleware')
+const cookieParser = require('cookie-parser');
+const logger = require('Morgan');
 
-app.use(express.static(path.join(__dirname, '../public')));  
+app.use(express.static(path.join(__dirname, './public')));  
 app.use(express.urlencoded({ extended: false }));
 app.use(logger('dev'));
 app.use(express.json());
