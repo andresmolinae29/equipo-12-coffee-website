@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { validationResult } = require('express-validator');
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 
@@ -31,26 +32,37 @@ const controller = {
 	// Create -  Method to store
 	store: (req, res) => {
 
-		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+		let errors = validationResult(req);
+
+		if (errors.isEmpty()) {
+			const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 		
-		const product = {
-			id : Date.now(),
-			name : req.body.name,
-            description : req.body.description,
-            size : req.body.size,
-			price : req.body.price,
-			category : req.body.category,		
-			img : req.file.filename,
-            longDescription : req.body.longDescription,
-            sellingCategory : req.body.sellingCategory
+			const product = {
+				id : Date.now(),
+				name : req.body.name,
+				description : req.body.description,
+				size : req.body.size,
+				price : req.body.price,
+				category : req.body.category,		
+				img : req.file.filename,
+				longDescription : req.body.longDescription,
+				sellingCategory : req.body.sellingCategory
+			}
+	
+			products.push(product)
+	
+			productsJson = JSON.stringify(products, null, " ")
+	
+			fs.writeFileSync(productsFilePath, productsJson)
+			res.redirect("/products");
+		} else {
+			res.render('product-create-form', { 
+				errors: errors.array(),
+				old: req.body
+			 });
+			// falta ajustarlo en el html
 		}
 
-		products.push(product)
-
-		productsJson = JSON.stringify(products, null, " ")
-
-		fs.writeFileSync(productsFilePath, productsJson)
-		res.redirect("/products");
 	},
 
 	// Update - Form to edit
