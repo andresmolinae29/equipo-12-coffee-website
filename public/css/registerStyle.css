@@ -1,9 +1,12 @@
 *{
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
 }
+
 body{
-    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    background-color: #ebebeb;
 }
 
  h1{
@@ -125,184 +128,8 @@ select{
     border: 2px solid #6e6e6e;
 }
 
-.contenedor-nav ul li a{
-    text-decoration: none;
-    color: #000;
-    display: inline-block;
-    padding: 7px 7px;
-    font-size: 17px;
-}
-
-.contenedor-nav ul li{
-    list-style-type: none;
-    margin: auto;
-} 
-
-header {
-    margin: auto;
-    padding: 20px;
-
-}
-
-header img {
-    width: 150px;
-}
-
-.contenedor-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.contenedor-header img {
-    flex-grow: 30%;
-    justify-content: center;
-    text-align: center; 
-    margin: auto;
-}
-
-header .contenedor-nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.contenedor-nav {
-    flex-grow: 0.60;
-    justify-content: space-between;
-    align-self: center;
-    flex-wrap: wrap;
-}
-
-.contenedor-header .caja-uno {
-    display: flex;
-    /* padding: 10px 50px; */
-    border-radius: 30px;
-    background-color: white;
-    border-color: white;
-    justify-content: center;
-    text-align: center; 
-    margin: auto;
-    flex-direction: column;
-}
-
-.contenedor-header .caja-dos {
-    display: flex;
-    align-items:flex-end;
-    justify-content: center;
-    text-align: center; 
-    margin: auto;
-}
-
-footer {
-    background-color: white;
-}
-
-footer .cont-footer-uno img {
-    margin: auto;
-    width: 120px;
-    align-items:baseline;
-    margin: auto;
-}
-
-footer .contenedor-footer {
-    padding-top: 50px;
-    display: flex;
-    justify-content: space-around;
-    align-items:center;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-}
-
-footer .cont-footer-uno {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 0.5;
-}
-
-footer .cont-footer-base {
-    display: flex;
-    /* width: 25%; */
-    flex-wrap: wrap;
-    margin: auto;
-    flex-direction: row;
-    align-items: center;
-    margin: auto;
-    padding: 2px;
-}
-
-footer .cont-footer-base p,
-footer .cont-footer-base i {
-    padding: 4px;
-}
-
-footer .copyright {
-    display: block;
-    border-top: 1px solid black;
-    text-align: center;
-    margin-top: 5px;
-    padding-top: 10px;
-    padding-bottom: 40px;
-    flex-wrap: wrap;
-}
-
-footer .contenedor-footer h4 {
-    padding-bottom: 5px;
-}
-
-footer .cont-footer-dos {
-    display: flex;
-    justify-items:stretch;
-    justify-content:space-around;
-    flex-grow: 0.5;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-footer .cont-footer-tres {
-    display: flex;
-    justify-items:stretch;
-    justify-content: space-around;
-    flex-grow: 0.5;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-footer .cont-footer-tres img {
-    width: 10px;
-}
-
-.cont-footer-base i {
-    font-size: 30px;
-}
-
 
 @media (min-width: 361px){
-
-    header {
-        margin: auto;
-        padding: 50px 50px;
-    
-    }
-
-    .contenedor-header{
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .contenedor-nav {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .contenedor-header img {
-        flex-grow: 30%;
-        justify-content: center;
-        text-align: center; 
-        margin: auto;
-    }
 
     .input-select {
         width: 102%;
@@ -324,43 +151,6 @@ footer .cont-footer-tres img {
 
 @media (min-width: 769px){
 
-    .contenedor-header{
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .contenedor-nav {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .contenedor-header .caja-uno {
-        flex-direction: row;
-        margin-left: 5%;
-    }
-
-    .contenedor-header .caja-dos {
-        justify-content: left;
-        text-align: left;
-        align-items:flex-start;
-        margin: 0px;
-    }
-
-    .contenedor-header img {
-        margin: 0;
-    }
-    .container{
-        margin: 20px auto;
-        padding: 5px;
-        width: 800px;
-        height: 450px;
-        background-color: gainsboro;
-        border-radius: 10px;
-    } 
-
-    footer .contenedor-footer {
-        margin-right: 15%;
-    }
     .columna-form:not(.btn-regis) {
         float: left;
         width: 50%;    

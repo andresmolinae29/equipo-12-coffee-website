@@ -1,0 +1,131 @@
+
+header {
+    margin: auto;
+    padding: 20px;
+
+}
+
+header img {
+    width: 150px;
+    /* width: 20%; */
+}
+
+.contenedor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.contenedor-header img {
+    flex-grow: 30%;
+    justify-content: center;
+    text-align: center; 
+    margin: auto;
+}
+
+header .contenedor-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.contenedor-nav {
+    flex-grow: 0.60;
+    justify-content: space-between;
+    align-self: center;
+    flex-wrap: wrap;
+}
+
+.contenedor-header .caja-uno {
+    display: flex;
+    padding: 10px 50px;
+    border-radius: 30px;
+    background-color: white;
+    border-color: white;
+    justify-content: center;
+    text-align: center; 
+    margin: auto;
+    flex-direction: column;
+}
+
+.contenedor-header .caja-dos {
+    display: flex;
+    align-items:flex-end;
+    justify-content: center;
+    text-align: center; 
+    margin: auto;
+    /* flex-direction: column; */
+}
+
+.contenedor-nav ul li a{
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    padding: 7px 7px;
+    font-size: 17px;
+}
+
+.contenedor-nav ul li{
+    list-style-type: none;
+    margin: auto;
+} 
+
+
+
+@media (min-width: 361px){
+
+    header {
+        margin: auto;
+        padding: 50px 50px;
+    
+    }
+
+    .contenedor-header{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .contenedor-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .contenedor-header img {
+        flex-grow: 30%;
+        justify-content: center;
+        text-align: center; 
+        margin: auto;
+    }
+
+}
+
+@media (min-width: 769px){
+
+    .contenedor-header{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .contenedor-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .contenedor-header .caja-uno {
+        flex-direction: row;
+        margin-left: 5%;
+    }
+
+    .contenedor-header .caja-dos {
+        justify-content: left;
+        text-align: left;
+        align-items:flex-start;
+        margin: 0px;
+    }
+
+    .contenedor-header img {
+        margin: 0;
+    }
+}
