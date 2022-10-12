@@ -4,7 +4,7 @@ const path = require('path');
 const methodOverride =  require('method-override');
 const logMiddleware = require('./middlewares/logMiddleware')
 const cookieParser = require('cookie-parser');
-const logger = require('Morgan');
+const logger = require('morgan');
 
 app.use(express.static(path.join(__dirname, './public')));  
 app.use(express.urlencoded({ extended: false }));
