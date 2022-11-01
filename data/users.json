@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "username": "kpolkinhorn0",
+        "email": "rcredland0@google.de",
+        "password": "1JOgU0",
+        "type": "Customer",
+        "avatar": "img-default.jpg"
+    },
+    {
+        "id": 2,
+        "username": "kkiossel1",
+        "email": "kosheilds1@umich.edu",
+        "password": "629P0nN6",
+        "type": "Admin",
+        "avatar": "img-default.jpg"
+    },
+    {
+        "id": 3,
+        "username": "bspoward2",
+        "email": "tmcnellis2@huffingtonpost.com",
+        "password": "z7x4wnruio",
+        "type": "Customer",
+        "avatar": "img-default.jpg"
+    },
+    {
+        "id": 4,
+        "username": "sbelfit3",
+        "email": "hslader3@moonfruit.com",
+        "password": "t6UWVpc",
+        "type": "Customer",
+        "avatar": "img-default.jpg"
+    },
+    {
+        "id": 5,
+        "username": "gtart4",
+        "email": "nhannum4@mayoclinic.com",
+        "password": "SYPqyU9xwvw",
+        "type": "Admin",
+        "avatar": "img-default.jpg"
+    },
+    {
+        "id": 6,
+        "username": "abaxendale5",
+        "email": "gmelanaphy5@alexa.com",
+        "password": "yIqSdjHIDa6",
+        "type": "Customer",
+        "avatar": "img-default.jpg"
+    },
+    {
+        "id": 7,
+        "username": "wraith6",
+        "email": "fsuddaby6@acquirethisname.com",
+        "password": "koQhaxp1TS",
+        "type": "Customer",
+        "avatar": "img-default.jpg"
+    },
+    {
+        "id": 8,
+        "username": "jgristock7",
+        "email": "bjanman7@dailymotion.com",
+        "password": "ak3jXJPYbSrH",
+        "type": "Customer",
+        "avatar": "img-default.jpg"
+    },
+    {
+        "id": 9,
+        "username": "tgilvear8",
+        "email": "ahannan8@nifty.com",
+        "password": "Wb7PReG",
+        "type": "Admin",
+        "avatar": "img-default.jpg"
+    },
+    {
+        "id": 10,
+        "username": "rhallward9",
+        "email": "tleamon9@networkadvertising.org",
+        "password": "exvBy0",
+        "type": "Admin",
+        "avatar": "img-default.jpg"
+    }
+]

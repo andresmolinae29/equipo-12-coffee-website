@@ -5,6 +5,7 @@ const methodOverride =  require('method-override');
 const logMiddleware = require('./middlewares/logMiddleware')
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const session = require('express-session');
 
 app.use(express.static(path.join(__dirname, './public')));  
 app.use(express.urlencoded({ extended: false }));
@@ -15,6 +16,8 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded( {extended: false}));
 app.use(express.json());
 app.use(logMiddleware);
+
+app.use(session( {secret: 'Secreto'} ));
 
 const indexRouter = require("./routes/mainRoutes");
 
