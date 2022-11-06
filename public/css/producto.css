@@ -1,0 +1,42 @@
+.card {
+    background: whitesmoke;
+    width: 220px;
+    height: 400px;
+    margin: 10px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+    0 2px 2px rgba(0,0,0,0.12), 
+    0 4px 4px rgba(0,0,0,0.12), 
+    0 8px 8px rgba(0,0,0,0.12),
+    0 16px 16px rgba(0,0,0,0.12);
+    border-radius: 1%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+div .img {
+    height: 150px;
+    width: 150px;
+}
+
+button {
+    background-color: black;
+    color: #fff;
+    line-height: 22px;
+    cursor: pointer;
+    width: 90px;
+    border-radius: 3px;
+    transition: border .2s, background-color .3s;
+
+}
+
+button:hover {
+    background-color: #888888;
+    border: 2px solid #6e6e6e;
+}
+    
+button:active {
+    background-color: black;
+    border: 2px solid #6e6e6e;
+}
