@@ -47,13 +47,13 @@ const controller = {
 				img : req.file.filename,
 				longDescription : req.body.longDescription,
 				sellingCategory : req.body.sellingCategory
-			}
+			};
 	
-			products.push(product)
+			products.push(product);
 	
-			productsJson = JSON.stringify(products, null, " ")
+			productsJson = JSON.stringify(products, null, " ");
 	
-			fs.writeFileSync(productsFilePath, productsJson)
+			fs.writeFileSync(productsFilePath, productsJson);
 			res.redirect("/products");
 		} else {
 			res.render('product-create-form', { 
