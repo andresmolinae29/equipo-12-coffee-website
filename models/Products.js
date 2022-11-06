@@ -37,11 +37,11 @@ const User = {
         
     },
 
-    create: function(userData) {
+    create: function(productData) {
         let allProducts = this.findAll();
         let newProduct = {
             id: this.generateId(),
-            ...userData
+            ...productData
         }
         allProducts.push(newProduct);
         fs.writeFileSync(this.fileName, JSON.stringify(allProducts, null, ' '));
@@ -50,10 +50,30 @@ const User = {
 
     delete: function(id) {
         let allProducts = this.findAll();
-        let finalUsers = allProducts.filter(users => users.id != id);
+        let finalProducts = allProducts.filter(users => users.id != id);
 
-        fs.writeFileSync(this.fileName, JSON.stringify(finalUsers, null, ' '));
+        fs.writeFileSync(this.fileName, JSON.stringify(finalProducts, null, ' '));
         return true;
+    },
+
+    compare: function(a, b) {
+        if (a.id < b.id) {
+            return -1;
+        }
+        if (a.id > b.id) {
+            return 1;
+        }
+        return 0;
+    },
+
+    edit: function(productData) {
+        let allProducts = this.findAll();
+        let productToEdit = allProducts.pop(productData.id);
+
+        allProducts.push(productToEdit);
+        allProducts = allProducts.sort(this.compare());
+        fs.writeFileSync(this.fileName, JSON.stringify(allProducts, null, ' '));
+        return productToEdit
     }
 }
 
