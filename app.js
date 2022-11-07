@@ -6,7 +6,7 @@ const logMiddleware = require('./middlewares/logMiddleware');
 const cookies = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
-const cookieAuthMiddleware = require('./middlewares/cookieAuthMiddleware');
+const cookieAuthMiddleware = require('./middlewares/AuthMiddleware');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 app.use(session( {
