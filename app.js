@@ -6,7 +6,6 @@ const logMiddleware = require('./middlewares/logMiddleware');
 const cookies = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
-const cookieAuthMiddleware = require('./middlewares/AuthMiddleware');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 app.use(session( {
@@ -25,7 +24,6 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded( {extended: false}));
 app.use(express.json());
 app.use(logMiddleware);
-app.use(cookieAuthMiddleware);
 app.use(userLoggedMiddleware);
 
 const indexRouter = require("./routes/mainRoutes");

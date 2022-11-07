@@ -99,31 +99,11 @@ const controller = {
     // Update - Method to update
     update: (req, res) => {
 
-        const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-
-        users.forEach((p) => {
-            if (p.id == req.params.id) {
-                p.name = req.body.name,
-                    p.username = req.body.username,
-                    p.password = req.body.password,
-                    p.type = req.body.type,
-                    p.avatar = req.file.filename
-            }
-        });
-
-        const data = JSON.stringify(users, null, " ");
-        fs.writeFileSync(usersFilePath, data);
         return res.redirect("/users/detail/" + req.params.id); // cambiar
-
     },
 
     // Delete - Delete one from DB
     destroy: (req, res) => {
-        let users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-        users = users.filter((p) => p.id != req.params.id);
-
-        const data = JSON.stringify(users, null, " ");
-        fs.writeFileSync(usersFilePath, data);
         return res.redirect("register");
     }
 };

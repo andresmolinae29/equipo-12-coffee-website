@@ -1,4 +1,5 @@
 const fs = require('fs');
+const Product = require('../models/Products')
 const path = require('path');
 const { validationResult } = require('express-validator');
 
@@ -9,17 +10,14 @@ const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
-		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+		const products = Product.findAll();
 		res.render('products', { products : products });
 	},
 
 	// Detail - Detail from one product
 	detail: (req, res) => {
 
-		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));		
-		const id = req.params.id;
-		const product = products.find((product) => product.id == id);
-		
+		const product = Product.findByPk(req.params.id);
 		res.render('detail', { product : product });
 	},
 
@@ -32,78 +30,72 @@ const controller = {
 	// Create -  Method to store
 	store: (req, res) => {
 
-		let errors = validationResult(req);
+		const resultValidation =  validationResult(req);
 
-		if (errors.isEmpty()) {
-			const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		
-			const product = {
-				id : Date.now(),
-				name : req.body.name,
-				description : req.body.description,
-				size : req.body.size,
-				price : req.body.price,
-				category : req.body.category,		
-				img : req.file.filename,
-				longDescription : req.body.longDescription,
-				sellingCategory : req.body.sellingCategory
-			};
-	
-			products.push(product);
-	
-			productsJson = JSON.stringify(products, null, " ");
-	
-			fs.writeFileSync(productsFilePath, productsJson);
-			res.redirect("/products");
-		} else {
-			res.render('product-create-form', { 
-				errors: errors.array(),
-				old: req.body
-			 });
-			// falta ajustarlo en el html
+		if (resultValidation.errors.length > 0) {
+			return res.render("/products", {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			});
 		}
 
+		let productInDB = Product.findByField('name', req.body.name)
+
+		if (productInDB) {
+			return res.render('/products', {
+				errors: {
+					name: {
+						msg: 'El producto ya se encuentra registrado'
+					}
+				},
+				oldData: req.body
+			});
+		}
+
+		Product.create(req.body);
+		return res.redirect('/products');
 	},
 
 	// Update - Form to edit
 	edit: (req, res) => {
-
-		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));		
-		const id = req.params.id;
-		const product = products.find((product) => product.id == id);
-
+		const product = Product.findByPk(req.body.id);
 		res.render('product-edit-form', { productToEdit : product});
 	},
 	// Update - Method to update
 	update: (req, res) => {
 		
-		const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+		const resultValidation =  validationResult(req);
 
-		products.forEach((p) => {
-		if (p.id == req.params.id) {
-			p.name = req.body.name,
-            p.description = req.body.description,
-            p.size = req.body.size,
-			p.price = req.body.price,
-			p.category = req.body.category,		
-            p.longDescription = req.body.longDescription,
-            p.sellingCategory = req.body.sellingCategory
+		if (resultValidation.errors.length > 0) {
+			return res.render("/products", {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			});
 		}
-		});
 
-		const data = JSON.stringify(products, null, " ");
-		fs.writeFileSync(productsFilePath, data);
+		Product.update(req.body);
+		
 		res.redirect("/products/detail/" + req.params.id);
 
 		},
 
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
-		let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-		products = products.filter((p) => p.id != req.params.id);
 
-		const data = JSON.stringify(products, null, " ");
-		fs.writeFileSync(productsFilePath, data);
+		let productInDB = Product.findByPk('name', req.body.id)
+
+		if (!productInDB) {
+			return res.render("/product", {
+				errors: {
+					name: {
+						msg: 'El producto no se encuentra en la BD'
+					}
+				},
+				oldData: req.body
+			});
+		}
+
+		Product.delete();
 		res.redirect("/products");
 	}
 };
