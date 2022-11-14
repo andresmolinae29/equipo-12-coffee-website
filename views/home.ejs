@@ -12,12 +12,35 @@
         <%- include("./partials/header") %>
         
         <%- include("./partials/slide") %>
-
-
         <div class="container">
-            <p>
-              aca va el home  
-            </p>
+            <main>
+
+                <section class="last-visit">
+                    <h3>Basado en tu última visita</h3>
+                    <div class="products">
+    
+                        <% for( const producto of visita ) {  %>
+    
+                            <%- include('./partials/producto', { producto }) %>
+    
+                        <% } %>
+                      
+                    </div>
+                </section>
+    
+                <section class="offers">
+                    <h3>Ofertas</h3>
+                    <div class="products">
+    
+                        
+                        <% for( const producto of oferta ) {  %>
+    
+                            <%- include('./partials/producto', { producto }) %>
+    
+                        <% } %>
+                        
+                    </div>  
+                </section>
         </div>
 
 
