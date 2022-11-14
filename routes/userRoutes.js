@@ -6,19 +6,30 @@ const router = express.Router();
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const validateRegisterForm = require('../middlewares/validateRegisterMiddleware');
-const validateLoginForm = require('../middleware/validateLoginMiddleware')
+const validateLoginForm = require('../middlewares/validateLoginMiddleware');
 
 // ************ Controller Require ************
-const usersController = require('../controllers/usersController');
+const usersController = require('../controllers/userController');
 
-router.get('/register', guestMiddleware, usersController.register); 
-router.post('/register', validateRegisterForm, usersController.processRegister); 
+router.get('/getAll', usersController.listAll); 
+router.post(
+    '/register', 
+    validateRegisterForm, 
+    usersController.processRegister
+    );
 
-router.get('/login', guestMiddleware,usersController.login);
-router.post('/login', validateLoginForm, usersController.processLogin)
+router.put('/edit/:id', usersController.edit);
 
-router.get('/profile/', authMiddleware, usersController.profile);
+router.delete('/delete/:id', usersController.destroy);
 
-router.get('/logout/', usersController.logout);
+// router.get('/login', guestMiddleware,usersController.login);
+// // router.post(
+// //     '/login', 
+// //     // validateLoginForm, 
+// //     usersController.processLogin);
+
+// router.get('/profile/', authMiddleware, usersController.profile);
+
+// router.get('/logout/', usersController.logout);
 
 module.exports = router;

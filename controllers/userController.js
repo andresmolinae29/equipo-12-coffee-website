@@ -1,111 +1,164 @@
-const User = require('../models/Users')
+const User = require('../models/Users');
+const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 
 const controller = {
-    // Create - New User
-    register: (req, res) => {
-        res.cookie( )
-        res.render('register');
 
-    },
+    listAll: (req, res) => {
+
+		const users = User.findAll();
+
+        console.log(users);
+
+		Promise.all([users])
+			.then(users => {
+				return res.status(200).json({
+					status: 200,
+					users: users
+				});
+			})
+			.catch(errors => {
+				return res.json({
+					message: errors,
+				});
+			})
+	},
+
+    // Create - New User
     processRegister: (req, res) => {
 
         const resultValidation = validationResult(req);
 
-        if (resultvalidation.errors.length > 0) {
-            return res.render('register', {
+        if (resultValidation.errors.length > 0) {
+            return res.json({
                 errors: resultValidation.mapped(),
                 oldData: req.body
             });
         }
 
-        let userInDB = User.findByField('email', req.body.email);
+        User.findOneUser('email', req.body.email)
+            .then(userByEmail => {
 
-        if (userInDB) {
-            return res.render('register', {
-                errors: {
-                    email: {
-                        msg: 'El email se encuentra registrado'
-                    }
-                },
-                oldData: req.body
-            });
-        }
+                // userByEmail = userByEmail == null ? undefined:userByEmail; 
 
-        let userToCreate = {
-            ...req.body,
-            password: bcrypt.hashSync(req.body.password, 10)
+                if (userByEmail) {
+                    return res.json({
+                        status: 200,
+                        message: "El email se encuentra registrado"
+                    })
+                } else {
 
-        };
-
-        User.create(userToCreate);
-        return res.redirect('/user/login');
-
-    },
-    login: (req, res) => {
-        return res.render('login');
-    },
-    loginProcess: (req, res) => {
-        let userTologin = User.findByField('email', req.body.email);
-
-        if (userTologin) {
-            let passwordVerification = bcrypt.compareSync(req.body.password, userTologin.password);
-            if (passwordVerification) {
-                delete userTologin.password;
-                req.session.userLogged = userTologin;
-
-                if(req.body.rememberMe) {
-                    res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2});
-                }
-                
-                return res.redirect('user/profile');
-            }
+                    let userToCreate = {
+                        ...req.body,
+                        password: bcrypt.hashSync(req.body.password, 10)
             
-            res.render('login', {
-                errors: {
-                    email: {
-                        msg: 'Las credenciales son invalidas'
-                    }
-                }
-            });
-        }
+                    };
 
-        res.render('login', {
-            errors: {
-                email: {
-                    msg: 'Usuario no registrado'
+                    delete userToCreate.passwordConfirmation;
+
+                    User.createOneUser(userToCreate);
+
+                    delete userToCreate.password;
+
+                    return res.status(200).json({
+                        status: 200,
+                        userCreated: userToCreate
+                    })
                 }
-            }
-        });
+            })
+            .catch(errors => {
+                res.json({
+                    message: errors
+                })
+            });
+
     },
-    profile: (req, res) => {
-        return res.render('profile', {
-            user: req.session.userLogged
-        })
-    },
-    logout: (res, res) => {
-        res.clearCookie('userEmail');
-        req.session.destroy();
-        return res.redirect('/')
-    },
+
+    // loginProcess: (req, res) => {
+    //     let userTologin = User.findByField('email', req.body.email);
+
+    //     if (userTologin) {
+    //         let passwordVerification = bcrypt.compareSync(req.body.password, userTologin.password);
+    //         if (passwordVerification) {
+    //             delete userTologin.password;
+    //             req.session.userLogged = userTologin;
+
+    //             if(req.body.rememberMe) {
+    //                 res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2});
+    //             }
+                
+    //             return res.redirect('user/profile');
+    //         }
+            
+    //         res.render('login', {
+    //             errors: {
+    //                 email: {
+    //                     msg: 'Las credenciales son invalidas'
+    //                 }
+    //             }
+    //         });
+    //     }
+
+    //     res.render('login', {
+    //         errors: {
+    //             email: {
+    //                 msg: 'Usuario no registrado'
+    //             }
+    //         }
+    //     });
+    // },
+
+    // profile: (req, res) => {
+    //     return res.render('profile', {
+    //         user: req.session.userLogged
+    //     })
+    // },
+
+    // logout: (req, res) => {
+    //     res.clearCookie('userEmail');
+    //     req.session.destroy();
+    //     return res.redirect('/')
+    // },
+
     edit: (req, res) => {
 
-        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-        const id = req.params.id;
-        const user = users.find((user) => user.id == id);
+        User.edit(req.params.id, req.body)
+			.then(userEdited => {
 
-        return res.render('users-edit-form', { usersToEdit: user });
-    },
-    // Update - Method to update
-    update: (req, res) => {
+                userEdited = User.findByPk(req.params.id);
 
-        return res.redirect("/users/detail/" + req.params.id); // cambiar
-    },
+                return userEdited;
+            })
+            .then(user => {
 
-    // Delete - Delete one from DB
+				return res.status(200).json({
+					status: 200,
+					userEdited: user
+				});
+
+            })
+			.catch(errors => {
+				return res.json({
+					message: errors
+				});
+			})
+	},
+
     destroy: (req, res) => {
-        return res.redirect("register");
-    }
+
+		User.delete(req.params.id)
+			.then(user => {
+				return res.status(200).json({
+					status: 200,
+					userDeleted: user
+				});
+			})
+			.catch(errors => {
+				return res.json({
+					message: errors
+				});
+			})
+	},
 };
 
 module.exports = controller;

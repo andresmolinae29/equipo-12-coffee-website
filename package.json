@@ -15,8 +15,11 @@
     "method-override": "^3.0.0",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
+    "mysql2": "^2.3.3",
     "nodemon": "^2.0.20",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "sequelize": "^6.25.5",
+    "sequelize-cli": "^6.5.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -31,6 +34,5 @@
   "bugs": {
     "url": "https://github.com/andresmolinae29/equipo-12-coffee-website/issues"
   },
-  "homepage": "https://github.com/andresmolinae29/equipo-12-coffee-website#readme",
-  "devDependencies": {}
+  "homepage": "https://github.com/andresmolinae29/equipo-12-coffee-website#readme"
 }

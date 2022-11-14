@@ -1,80 +1,86 @@
-const fs = require('fs')
+const db = require('../database/models');
 
-const User = {
-    fileName: './data/productsDatabase.json',
-    
+const Product = {
+
     getData: function () {
-        return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
+        products = db.Product.findAll();
+
+        return products;
     },
 
     findAll: function () {
+
         return this.getData();
+
     },
 
     findByPk: function (id) {
-        let allProducts = this.findAll();
-        let userFound = allProducts.find(oneProduct => oneProduct.id == id);
 
-        return userFound
+        product = db.Product.findByPk(id);
+
+        return product;
     },
 
-    // en productos deberia agregar un findall by filter
-    findByField: function (field, text) {
-        let allProducts = this.findAll();
-        let userFound = allProducts.find(oneProduct => oneProduct[field] == text);
+    findOneProduct: function (field, text) {
 
-        return userFound
+        product = db.Product.findOne({
+            where: {
+                [field]: text
+            }
+        });
+
+        return product;
     },
 
-    generateId: function () {
-        let allProducts = this.findAll();
-        let lastProduct = allProducts.pop();
-        if (lastProduct) {
-            return lastProduct.id + 1
-        }
+    filterByField: function (field, value) {
 
-        return 1;
-        
+        products = db.Product.findAll({
+            where: {
+                [field]: value
+            }
+        });
+
+        return products;
     },
 
-    create: function(productData) {
-        let allProducts = this.findAll();
-        let newProduct = {
-            id: this.generateId(),
+    createOneProduct: function (productData) {
+
+        db.Product.create({
             ...productData
-        }
-        allProducts.push(newProduct);
-        fs.writeFileSync(this.fileName, JSON.stringify(allProducts, null, ' '));
-        return newProduct;
+        });
+
+        return productData;
     },
 
-    delete: function(id) {
-        let allProducts = this.findAll();
-        let finalProducts = allProducts.filter(users => users.id != id);
+    delete: function (productId) {
 
-        fs.writeFileSync(this.fileName, JSON.stringify(finalProducts, null, ' '));
-        return true;
+        product = this.findByPk(productId);
+
+        db.Product.destroy({
+            where: {
+                id: [productId]
+            }
+        })
+
+        return product;
     },
 
-    compare: function(a, b) {
-        if (a.id < b.id) {
-            return -1;
-        }
-        if (a.id > b.id) {
-            return 1;
-        }
-        return 0;
-    },
+    edit: function (id, productData) {
 
-    edit: function(productData) {
-        let allProducts = this.findAll();
-        let productToEdit = allProducts.pop(productData.id);
+        product = db.Product.update(
+            {
+                ...productData
+            },
+            {
+                returning: true,
+                where: {
+                    id: id
+                }
+            }
+        )
 
-        allProducts.push(productToEdit);
-        allProducts = allProducts.sort(this.compare());
-        fs.writeFileSync(this.fileName, JSON.stringify(allProducts, null, ' '));
-        return productToEdit
+        return product;
     }
 }
 
-module.exports = User;
+module.exports = Product;

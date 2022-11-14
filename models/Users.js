@@ -1,59 +1,85 @@
-const fs = require('fs')
+const db = require('../database/models');
 
 const User = {
-    fileName: './data/users.json',
     
-    getData: function () {
-        return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
-    },
+    // getData: function () {
+    //     users = db.User.findAll();
+
+    //     return users;
+    // },
 
     findAll: function () {
-        return this.getData();
+
+        return db.User.findAll();
+
     },
 
     findByPk: function (id) {
-        let allUsers = this.findAll();
-        let userFound = allUsers.find(oneUser => oneUser.id == id);
 
-        return userFound
+        user = db.User.findByPk(id);
+
+        return user;
     },
 
-    // en productos deberia agregar un findall by filter
-    findByField: function (field, text) {
-        let allUsers = this.findAll();
-        let userFound = allUsers.find(oneUser => oneUser[field] == text);
+    findOneUser: function (field, text) {
 
-        return userFound
+        user = db.User.findOne({
+            where: {
+                [field]: text
+            }
+        });
+
+        return user;
     },
 
-    generateId: function () {
-        let allUsers = this.findAll();
-        let lastUser = allUsers.pop();
-        if (lastUser) {
-            return lastUser.id + 1
-        }
+    filterByField: function (field, value) {
 
-        return 1;
-        
+        users = db.User.findAll({
+            where: {
+                [field]: value
+            }
+        });
+
+        return users;
     },
 
-    create: function(userData) {
-        let allUsers = this.findAll();
-        let newUser = {
-            id: this.generateId(),
+    createOneUser: function (userData) {
+
+        db.User.create({
             ...userData
-        }
-        allUsers.push(newUser);
-        fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, ' '));
-        return newUser;
+        });
+
+        return userData;
     },
 
-    delete: function(id) {
-        let allUsers = this.findAll();
-        let finalUsers = allUsers.filter(users => users.id != id);
+    delete: function (UserId) {
 
-        fs.writeFileSync(this.fileName, JSON.stringify(finalUsers, null, ' '));
-        return true;
+        user = this.findByPk(UserId);
+
+        db.User.destroy({
+            where: {
+                id: [UserId]
+            }
+        })
+
+        return user;
+    },
+
+    edit: function (id, userData) {
+
+        user = db.User.update(
+            {
+                ...userData
+            },
+            {
+                returning: true,
+                where: {
+                    id: id
+                }
+            }
+        )
+
+        return user;
     }
 }
 

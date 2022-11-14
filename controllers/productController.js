@@ -1,102 +1,146 @@
-const fs = require('fs');
 const Product = require('../models/Products')
-const path = require('path');
 const { validationResult } = require('express-validator');
-
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-
-// const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
 	// Root - Show all products
-	index: (req, res) => {
+	listAll: (req, res) => {
+
 		const products = Product.findAll();
-		res.render('products', { products : products });
+
+		Promise.all([products])
+			.then(products => {
+				return res.status(200).json({
+					status: 200,
+					products: products
+				});
+			})
+			.catch(errors => {
+				return res.json({
+					message: errors,
+				});
+			})
 	},
 
 	// Detail - Detail from one product
 	detail: (req, res) => {
 
-		const product = Product.findByPk(req.params.id);
-		res.render('detail', { product : product });
+		const products = Product.findByPk(req.params.id);
+
+		Promise.all([products])
+			.then(product => {
+				return res.status(200).json({
+					status: 200,
+					product: product
+				});
+			})
+			.catch(errors => {
+				return res.json({
+					message: errors,
+				});
+			})
+
 	},
 
-	// Create - Form to create
-	create: (req, res) => {
-		res.render('product-create-form');
-		
-	},
-	
 	// Create -  Method to store
 	store: (req, res) => {
 
-		const resultValidation =  validationResult(req);
+		const resultValidation = validationResult(req);
 
 		if (resultValidation.errors.length > 0) {
-			return res.render("/products", {
+			return res.json({
 				errors: resultValidation.mapped(),
 				oldData: req.body
 			});
 		}
 
-		let productInDB = Product.findByField('name', req.body.name)
+		let product = req.body;
+		product.img = req.file;
 
-		if (productInDB) {
-			return res.render('/products', {
-				errors: {
-					name: {
-						msg: 'El producto ya se encuentra registrado'
-					}
-				},
-				oldData: req.body
-			});
-		}
+		if (product.img == undefined) {
+			product.img = 'img-default.jpg'
+		};
 
-		Product.create(req.body);
-		return res.redirect('/products');
+		Product.findOneProduct('name', product.name)
+			.then(productByName => {
+				return productByName
+			})
+			.then(productByName => {
+				if (productByName) {
+					return res.json({
+						status: 200,
+						message: "El producto se encuentra en la base de datos"
+					})
+				} else {
+					Product.createOneProduct(product)
+					return res.status(200).json({
+						status: 200,
+						productCreated: product
+					})
+				}
+			})
+			.catch(errors => {
+				res.json({
+					message: errors
+				})
+			})
 	},
 
-	// Update - Form to edit
-	edit: (req, res) => {
-		const product = Product.findByPk(req.body.id);
-		res.render('product-edit-form', { productToEdit : product});
-	},
 	// Update - Method to update
 	update: (req, res) => {
-		
-		const resultValidation =  validationResult(req);
 
-		if (resultValidation.errors.length > 0) {
-			return res.render("/products", {
-				errors: resultValidation.mapped(),
-				oldData: req.body
-			});
-		}
+		Product.edit(req.params.id, req.body)
+			.then(productEdited => {
 
-		Product.update(req.body);
-		
-		res.redirect("/products/detail/" + req.params.id);
+                productEdited = Product.findByPk(req.params.id);
 
-		},
+                return productEdited;
+            })
+            .then(product => {
+
+				return res.status(200).json({
+					status: 200,
+					productEdited: product
+				});
+
+            })
+			.catch(errors => {
+				return res.json({
+					message: errors
+				});
+			})
+	},
 
 	// Delete - Delete one product from DB
-	destroy : (req, res) => {
+	destroy: (req, res) => {
 
-		let productInDB = Product.findByPk('name', req.body.id)
+		Product.delete(req.params.id)
+			.then(product => {
+				return res.status(200).json({
+					status: 200,
+					productDeleted: product
+				});
+			})
+			.catch(errors => {
+				return res.json({
+					message: errors
+				});
+			})
+	},
 
-		if (!productInDB) {
-			return res.render("/product", {
-				errors: {
-					name: {
-						msg: 'El producto no se encuentra en la BD'
-					}
-				},
-				oldData: req.body
+	filterDataByCategory: (req, res) => {
+
+		Product.filterByField('sellingCategory', req.query.category)
+			.then(products => {
+				return res.status(200).json({
+					status: 200,
+					products: products
+				})
+			})
+			.catch(errors => {
+				return res.json({
+					message: errors
+				})
 			});
-		}
-
-		Product.delete();
-		res.redirect("/products");
 	}
 };
 
