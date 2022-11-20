@@ -1,3 +1,4 @@
+CREATE database IF NOT EXISTS db_coffee;
 use db_coffee;
 
 DROP TABLE IF EXISTS shopping_products;

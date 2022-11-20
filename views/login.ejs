@@ -6,22 +6,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/5cc45362ff.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../public/css/loginStyle.css">
+        <link rel="stylesheet" href="./css/loginStyle.css">
     </head>
     <body>
         <%- include("./partials/header") %>
 
 
             <div class="container">
-                <h1>Ingresar</h1>
+                <h3>Ingresar</h3>
             <form action="#" method="POST">
-                <div><input type="text" class="field" placeholder="Usuario" name="user"></div>
-                <div><input type="password" class="field" placeholder="Contraseña" name="password"></div>
-                <label class="checkRecordar" for="recordar">Recordarme<input type="checkbox" name="rememberMe" id="recordar"></label>
+                <div>
+                    <input type="text" class="field" placeholder="Usuario" name="user">
+                    <label for="user" class="label-input"></label>
+                </div>
+                <div>
+                    <input type="password" class="field" placeholder="Contraseña" name="password">
+                    <label for="password" class="label-input"></label>
+                </div>
+                <div>
+                <label class="checkRecordar" for="recordar">Recordarme<input type="checkbox" style="margin-left: 10px;" name="rememberMe" id="recordar">
+                </label></div>
                 <div><input class="btn" type="submit" value="Ingresar"></div>
                 <h6 class="recuperarContrasena"><a href="#"> ¿Olvidaste tu contraseña? </a></h6>
             </form>
-
         </div>
         <%- include("./partials/footer") %>
     </body>

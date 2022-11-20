@@ -1,0 +1,109 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #ebebeb;
+}
+
+.col-12 {
+    text-align: center;
+}
+
+ h2{
+    width: 50%;
+    color: rgb(39, 39, 39);
+    font-size: 36px;
+    margin: 32px auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-input {
+    position: relative;
+    height: 45px;
+    width: 45%;
+    margin-bottom: 17px;
+}
+
+input{
+    margin-bottom: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border .2s, background-color .3s;
+    border: solid transparent;
+} 
+::placeholder {
+    color: rgb(39, 39, 39)
+}
+input:focus::placeholder {
+    color: transparent;
+    transition: 0.4s;
+}
+
+textarea {
+    border-radius: 3px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border .2s, background-color .3s;
+    border: solid transparent;
+}
+
+select{
+    border-radius: 3px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border .2s, background-color .3s;
+    border: rgb(39, 39, 39);
+}
+
+.btn-save{
+    background-color: black;
+    color: #fff;
+    line-height: 25px;
+    margin-left: 35%;
+    cursor: pointer;
+    width: 25%;
+    margin-top: 3%;
+    margin-right: 35%;
+    text-align: center;
+    transition: 0.2s;
+    border-radius: 3px;
+}
+button {
+    flex: auto;
+    margin-top: 50%;
+}
+
+.btn-save:hover {
+    background-color: #888888;
+    border: 2px solid #6e6e6e;
+
+}
+
+.btn-save:active {
+    background-color: black;
+    border: 2px solid #6e6e6e;
+}
+
+
+@media (min-width: 361px){
+
+    .input-select {
+        width: 102%;
+        margin-left: 26px;
+    }
+}
+
+@media (min-width: 769px){
+
+    .columna-form:not(.btn-save) {
+        float: left;
+        width: 50%;    
+      }
+}

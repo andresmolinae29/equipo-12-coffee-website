@@ -33,15 +33,6 @@ const productRouter = require("./routes/productsRoutes");
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-
-app.get("/", (req, res) => {
-  const oferta = productos.filter((elemento) => elemento.sellingCategory == "new");
-
-  const visita = productos.filter((elemento) => elemento.sellingCategory == "sale");
-
-  res.render("home", { oferta: oferta, visita: visita });
-});
-
 app.use("/", indexRouter);
 app.use("/user", userRouter);
 app.use("/product", productRouter);

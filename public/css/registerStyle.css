@@ -9,7 +9,16 @@ body{
     background-color: #ebebeb;
 }
 
- h1{
+.container{
+    margin: 20px auto;
+    padding: 5px;
+    width: 400px;
+    height: 700px;
+    background-color: gainsboro;
+    border-radius: 10px;
+} 
+
+ h3{
     width: 50%;
     color: rgb(39, 39, 39);
     font-size: 36px;
@@ -22,40 +31,31 @@ form{
     text-align: center;
 }
 
-.input-container {
-    position: relative;
-    height: 45px;
-    width: 90%;
-    margin-bottom: 17px;
-  }
-
-.input-select {
-    position: relative;
-    height: 45px;
-    width: 105%;
-    margin: 17px;
-    padding-left: 55px;
-    
-}
-
 input{
+    padding: 12px; 
+    margin-bottom: 25px;
+    border-radius: 3px;
+    border: 2px solid transparent;
+    text-align: center;
+    display: 100%;
+    font-size: 16px;
+    transition: border .2s, background-color .3s;
+} 
 
-    position: relative;
-    border: 1px solid #DADCE0;
+select{
     border-radius: 3px;
     margin-bottom: 10px;
     font-size: 16px;
-    padding: 12px;
     outline: none;
-    background: none;
-    z-index: 1;
     transition: border .2s, background-color .3s;
-    border: 2px solid transparent;
-
-} 
+    border: rgb(39, 39, 39);
+    appearance: none;
+    height: 2rem;
+    width: 80%;
+}
 
 ::placeholder {
-    color: gray
+    color: rgb(39, 39, 39)
 }
 input:focus::placeholder {
     color: transparent;
@@ -89,42 +89,40 @@ form .field{
     background-color: whitesmoke;
     width: 60%;
 }
-/*
-select{
-    background: whitesmoke;
-    color: #000;
-    appearance: none;
-    height: 2rem;
-    width: 60%;
-    font-size: 16px;
+
+.input-select{
+    padding-left: 14%;
+} 
+#ubicacion {
+    width: 68%;
+    height: 4.5vh;
     border-radius: 3px;
-} */
+}
 
-/*
-.columna-form:not(.btn-regis) {
-    float: left;
-    width: 50%;    
-  } */
+#ubi-select {
+    text-align: center;
+}
 
-.btn-regis{
-    background-color: black;
+.btn-save{
+    background-color: rgb(39, 39, 39);
     color: #fff;
     line-height: 25px;
-    margin-left: 35%;
+    margin-left: 20%;
     cursor: pointer;
-    width: 25%;
-    margin-top: 3%;
-    margin-right: 35%;
+    width: 45%;
+    margin-top: 25px;
+    margin-right: 20%;
     text-align: center;
     
+    
 }
-.btn-regis:hover {
+.btn-save:hover {
     background-color: #888888;
     border: 2px solid #6e6e6e;
 }
 
-.btn-regis:active {
-    background-color: black;
+.btn-save:active {
+    background-color: rgb(39, 39, 39);
     border: 2px solid #6e6e6e;
 }
 
@@ -144,15 +142,4 @@ select{
         background-color: gainsboro;
         border-radius: 10px;
     } 
-
-    
-
-}
-
-@media (min-width: 769px){
-
-    .columna-form:not(.btn-regis) {
-        float: left;
-        width: 50%;    
-      }
 }

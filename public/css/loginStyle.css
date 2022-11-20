@@ -8,6 +8,7 @@ body{
     font-family: 'Roboto', sans-serif;
     background-color: #ebebeb;
 }
+
 .container{
     margin: 20px auto;
     padding: 5px;
@@ -16,7 +17,8 @@ body{
     background-color: gainsboro;
     border-radius: 10px;
 } 
- h1{
+
+ h3{
     width: 50%;
     color: rgb(39, 39, 39);
     font-size: 36px;
@@ -24,12 +26,14 @@ body{
     margin-bottom: 20px;
     text-align: center;
 }
+
 form{
     text-align: center;
 }
+
 input{
-    padding: 12px 0; 
-    margin-bottom: 10px;
+    padding: 12px; 
+    margin-bottom: 25px;
     border-radius: 3px;
     border: 2px solid transparent;
     text-align: center;
@@ -45,11 +49,11 @@ h5{
     width: 50%;
     font-size: 16px;
     text-align: center;
-    color: black;
+    color: rgb(39, 39, 39);
 }
 
 form .btn{
-    background-color: black;
+    background-color: rgb(39, 39, 39);
     color: #fff;
     line-height: 25px;
     cursor: pointer;
@@ -61,17 +65,25 @@ form .btn:hover {
 }
 
 form .btn:active {
-    background-color: black;
+    background-color: rgb(39, 39, 39);
     border: 2px solid #6e6e6e;
 }
 
 h6{
     width: 50%;
-    font-size: 16px;
-    margin: 10px auto;
+    font-size: 12px;
+    margin: auto;
     text-align: center;
-    color: black;
 }
+
+::placeholder {
+    color: rgb(39, 39, 39)
+}
+input:focus::placeholder {
+    color: transparent;
+    transition: 0.4s;
+}
+
 
 @media (min-width: 361px){
 

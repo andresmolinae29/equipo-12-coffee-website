@@ -7,6 +7,7 @@ router.get('/', mainController.index)
 router.get('/cart', mainController.cart)
 router.get('/login', mainController.login)
 router.get('/register', mainController.register)
+router.get('/create', mainController.create)
 router.get('/item', mainController.item)
 
 module.exports = router

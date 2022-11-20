@@ -1,6 +1,6 @@
 
 footer {
-    background-color: white;
+    background-color: #ebebeb;
 }
 
 footer .cont-footer-uno img {
@@ -27,7 +27,6 @@ footer .cont-footer-uno {
 
 footer .cont-footer-base {
     display: flex;
-    /* width: 25%; */
     flex-wrap: wrap;
     margin: auto;
     flex-direction: row;
@@ -47,7 +46,6 @@ footer .copyright {
     text-align: center;
     margin-top: 5px;
     padding-top: 10px;
-    padding-bottom: 40px;
     flex-wrap: wrap;
 }
 
