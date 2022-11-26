@@ -13,7 +13,7 @@ body{
     margin: 20px auto;
     padding: 5px;
     width: 400px;
-    height: 700px;
+    height: 800px;
     background-color: gainsboro;
     border-radius: 10px;
 } 
@@ -42,16 +42,12 @@ input{
     transition: border .2s, background-color .3s;
 } 
 
-select{
+.btn-save{
     border-radius: 3px;
-    margin-bottom: 10px;
     font-size: 16px;
     outline: none;
     transition: border .2s, background-color .3s;
     border: rgb(39, 39, 39);
-    appearance: none;
-    height: 2rem;
-    width: 80%;
 }
 
 ::placeholder {
@@ -72,7 +68,14 @@ input:focus::placeholder {
     font-size: 16px;
     transition: 0.7s;
     z-index: 0;
-  }
+}
+.imgUpload{
+    color: rgb(39, 39, 39);
+    font-size: 16px;
+    padding-right: 25%;
+    border-radius: 10px;
+}
+
 
 input:focus + .label-input {
     top: -7px;
@@ -82,7 +85,7 @@ input:focus + .label-input {
     color: black;
     background-color: transparent;
     border-radius: 3px;
-  }
+}
 
 
 form .field{
@@ -110,10 +113,10 @@ form .field{
     margin-left: 20%;
     cursor: pointer;
     width: 45%;
+    height: 40px;
     margin-top: 25px;
     margin-right: 20%;
     text-align: center;
-    
     
 }
 .btn-save:hover {

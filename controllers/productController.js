@@ -1,20 +1,18 @@
-const Product = require('../models/Products')
 const { validationResult } = require('express-validator');
+const Product = require('../models/Product');
 
 const controller = {
 	// Root - Show all products
 	listAll: (req, res) => {
 
-		const products = Product.findAll();
-
-		Promise.all([products])
-			.then(products => {
+		Product.findAll()
+			.then(pr => {
+				let parsedProducts = pr.map(el => { return el.dataValues }) 
 				return res.status(200).json({
 					status: 200,
-					products: products
-				});
-			})
-			.catch(errors => {
+					products: parsedProducts
+				})
+			}).catch(errors => {
 				return res.json({
 					message: errors,
 				});

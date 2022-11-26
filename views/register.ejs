@@ -10,48 +10,45 @@
     </head>
     <body>
         <%- include("./partials/header") %>
-
+        
         <div class="container">
-                <h3>Registrarse</h3>
-            <form action="#" method="POST">
+            <h3>Registrarse</h3>
+            <form id="register" enctype="multipart/form-data">
                 <div>
-                    <input type="text" class="field" placeholder="Nombre y apellido" name="fullName">
+                    <input id="fullName" type="text" class="field" placeholder="Nombre y apellido" name="fullName">
                     <label for="fullName" class="label-input"></label>
                 </div>
                 <div>
-                    <input type="text" class="field" placeholder="Usuario" name="user">
+                    <input id="userName" type="text" class="field" placeholder="Usuario" name="user">
                     <label for="user" class="label-input"></label>
                 </div>
                 <div>
-                    <input type="password" class="field" placeholder="Contraseña" name="password">
+                    <input id="password" type="password" class="field" placeholder="Contraseña" name="password">
                     <label for="password" class="label-input"></label>
                 </div>
                 <div>
-                    <input type="password" class="field" placeholder="Confirmar contraseña" name="passwordConfirmation">
+                    <input id="passwordConfirmation" type="password" class="field" placeholder="Confirmar contraseña" name="passwordConfirmation">
                     <label for="passwordConfirmation" class="label-input"></label>
                 </div>
                 <div>
-                    <input type="email" class="field" placeholder="Email" name="email">
+                    <input id="email" type="email" class="field" placeholder="Email" name="email">
                     <label for="email" class="label-input"></label>
                 </div>
-                <div>
-                    <input type="date" class="field" placeholder="" name="birthDate">
-                    <label for="birthDate" class="label-input"></label>
-                </div>
-
                 <div class="input-select">
-                    <div type="select" class="field" id="ubicacion">
-                        <select class="field" name="country" id="ubi-select">
-                            <option value="">Ubicación</option>
-                            <option value="Colombia">Colombia</option>
-                            <option value="Argentina">Argentina</option>
-                        </select>
+                    <div class="imgUpload">
+                        <label id="avatar" for="img" class="avatar-text">Avatar de usuario</label>
+                        <br><input type="file" for="img" id="foto" name="avatarUser" class="form-input">
+                    </div>
                 </div>
-                </div>
-                <div><input class="btn-save" type="submit" value="Registrarse"></div>
+                <div><button class="btn-save" type="submit" value="Registrarse">Registrarse</button></div>
+                <h4 id="alert">
+                    <div class="alertOK"></div>
+                    
+                </h4>
             </form>
         </div>
-
-        <%- include("./partials/footer") %>
+        
+        <%- include("./partials/footer") %>        
+        <script src="./js/registerUser.js"></script>
     </body>
 </html>

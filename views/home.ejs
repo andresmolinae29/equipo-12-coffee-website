@@ -20,9 +20,9 @@
                     <h3>Basado en tu última visita</h3>
                 <div class="products">
 
-                    <% for( const Products of sale ) {  %>
+                    <% for( const product of products ) {  %>
 
-                        <%- include('./partials/producto', { producto }) %>
+                        <%- include('./partials/producto', { product }) %>
 
                     <% } %>
                     
@@ -34,9 +34,9 @@
                     <div class="products">
     
                         
-                        <% for( const producto of limited-offer ) {  %>
+                        <% for( const product of products ) {  %>
     
-                            <%-  include('./partials/producto', { producto }) %>
+                            <%-  include('./partials/producto', { product }) %>
     
                         <% } %>
                         

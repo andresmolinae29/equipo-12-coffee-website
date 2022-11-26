@@ -10,7 +10,7 @@ module.exports = [
         .withMessage('Debe escribir una fecha'),
     body('passwordConfirmation')
         .notEmpty()
-        // .equals(body('password'))
+        .equals(body('password'))
         .withMessage('Debe ser igual a la contrasena'),
     body('email')
         .notEmpty().withMessage('No puede estar vacio')

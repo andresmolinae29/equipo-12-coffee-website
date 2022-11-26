@@ -1,8 +1,11 @@
+const { getProducts } = require('../services/productService');
+const { registerUser } = require('../services/userService');
 
 const mainController = {
 
-    index: (req, res) => {
-        return res.render("home")
+    index: async (req, res) => {
+        const response = await getProducts();
+        return res.render("home", response)
     },
     create: (req, res) => {
         return res.render("product-create-form")
@@ -16,8 +19,9 @@ const mainController = {
     login: (req, res) => {
         return res.render("login")
     },    
-    register: (req, res) => {
-        return res.render("register")
+    register: async (req, res) => {
+        const response = await registerUser();
+        return res.render("register", response)
     },    
     item: (req, res) => {
         return res.render("item")
