@@ -7,14 +7,14 @@ module.exports = {
     "dialect": "mysql",
     "port": 3306
   },
-  "development": {
-    "username": "root",
-    "password": null,
-    "database": "db_coffee",
-    "host": "localhost",
-    "dialect": "mysql",
-    "port": 3306
-  },
+  // "development": {
+  //   "username": "root",
+  //   "password": null,
+  //   "database": "db_coffee",
+  //   "host": "localhost",
+  //   "dialect": "mysql",
+  //   "port": 3306
+  // },
   "test": {
     "username": "root",
     "password": null,

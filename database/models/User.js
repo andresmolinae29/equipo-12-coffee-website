@@ -14,19 +14,11 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             type: dataTypes.STRING,
         },
-        birthDate: {
-            allowNull: false,
-            type: dataTypes.DATE
-        },
         email: {
             allowNull: false,
             type: dataTypes.STRING,
         },
         password: {
-            allowNull: false,
-            type: dataTypes.STRING,
-        },
-        type: {
             allowNull: false,
             type: dataTypes.STRING,
         },

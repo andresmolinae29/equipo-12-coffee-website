@@ -1,5 +1,6 @@
-CREATE database IF NOT EXISTS db_coffee;
-use db_coffee;
+DROP DATABASE db_coffee;
+CREATE DATABASE IF NOT EXISTS db_coffee;
+USE db_coffee;
 
 DROP TABLE IF EXISTS shopping_products;
 DROP TABLE IF EXISTS shopping_cart;
@@ -25,7 +26,6 @@ CREATE TABLE IF NOT EXISTS users (
 	id INTEGER AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
     fullName VARCHAR(100) NOT NULL,
-    birthDate DATE NOT NULL,
     email VARCHAR(70) NOT NULL,
     password VARCHAR(200) NOT NULL,
     type VARCHAR(20) NOT NULL DEFAULT 'user',
@@ -50,3 +50,6 @@ CREATE TABLE IF NOT EXISTS shopping_products (
     FOREIGN KEY (shopping_cart_id) REFERENCES shopping_cart(id),
     FOREIGN KEY (product_id) REFERENCES products(id)
 );
+
+CREATE USER IF NOT EXISTS 'db_coffee_user' IDENTIFIED BY 'Cafe1234.';
+GRANT ALL PRIVILEGES ON db_coffee.* TO 'db_coffee_user' WITH GRANT OPTION;

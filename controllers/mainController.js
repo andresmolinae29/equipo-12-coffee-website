@@ -15,17 +15,34 @@ const mainController = {
     },
     cart: (req, res) => {
         return res.render("cart")
-    },    
+    },
     login: (req, res) => {
         return res.render("login")
-    },    
-    register: async (req, res) => {
-        const response = await registerUser();
-        return res.render("register", response)
-    },    
+    },
+    register: (req, res) => {
+
+        return res.render("register");
+
+    },
+    registerUserProcess: (req, res) => {
+
+        console.log(req.body);
+
+        registerUser(req.body)
+            .then(user => {
+                console.log(user);
+                return res.redirect("/");
+            })
+            .catch(errors => {
+                return res.render("register", {
+                    message: errors
+                })
+            })
+    },
+    
     item: (req, res) => {
         return res.render("item")
-    },    
+    },
 }
 
 module.exports = mainController;

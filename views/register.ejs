@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Mercadito de café - Login</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://kit.fontawesome.com/5cc45362ff.js" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./css/registerStyle.css">
-    </head>
-    <body>
-        <%- include("./partials/header") %>
-        
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mercadito de café - Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5cc45362ff.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Roboto:wght@100;300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/registerStyle.css">
+</head>
+
+<body>
+    <%- include("./partials/header") %>
+
         <div class="container">
             <h3>Registrarse</h3>
-            <form id="register" enctype="multipart/form-data">
+            <form action="/register" method="POST" id="register" enctype="multipart/form-data">
                 <div>
                     <input id="fullName" type="text" class="field" placeholder="Nombre y apellido" name="fullName">
                     <label for="fullName" class="label-input"></label>
@@ -27,7 +30,8 @@
                     <label for="password" class="label-input"></label>
                 </div>
                 <div>
-                    <input id="passwordConfirmation" type="password" class="field" placeholder="Confirmar contraseña" name="passwordConfirmation">
+                    <input id="passwordConfirmation" type="password" class="field" placeholder="Confirmar contraseña"
+                        name="passwordConfirmation">
                     <label for="passwordConfirmation" class="label-input"></label>
                 </div>
                 <div>
@@ -43,12 +47,13 @@
                 <div><button class="btn-save" type="submit" value="Registrarse">Registrarse</button></div>
                 <h4 id="alert">
                     <div class="alertOK"></div>
-                    
+
                 </h4>
             </form>
         </div>
-        
-        <%- include("./partials/footer") %>        
-        <script src="./js/registerUser.js"></script>
-    </body>
+
+        <%- include("./partials/footer") %>
+            <!-- <script src="./js/registerUser.js"></script> -->
+</body>
+
 </html>
