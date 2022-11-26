@@ -16,14 +16,14 @@
 
         <div class="container">
             <h3>Registrarse</h3>
-            <form action="/register" method="POST" id="register" enctype="multipart/form-data">
+            <form action="/user/register" method="POST" enctype="multipart/form-data">
                 <div>
                     <input id="fullName" type="text" class="field" placeholder="Nombre y apellido" name="fullName">
                     <label for="fullName" class="label-input"></label>
                 </div>
                 <div>
-                    <input id="userName" type="text" class="field" placeholder="Usuario" name="user">
-                    <label for="user" class="label-input"></label>
+                    <input id="userName" type="text" class="field" placeholder="Usuario" name="userName">
+                    <label for="userName" class="label-input"></label>
                 </div>
                 <div>
                     <input id="password" type="password" class="field" placeholder="Contraseña" name="password">
@@ -40,11 +40,13 @@
                 </div>
                 <div class="input-select">
                     <div class="imgUpload">
-                        <label id="avatar" for="img" class="avatar-text">Avatar de usuario</label>
-                        <br><input type="file" for="img" id="foto" name="avatarUser" class="form-input">
+                        <label id="avatar" for="avatar" class="avatar-text">Avatar de usuario</label>
+                        <br><input type="file" for="avatar" id="avatar" name="avatar" class="form-input">
                     </div>
                 </div>
-                <div><button class="btn-save" type="submit" value="Registrarse">Registrarse</button></div>
+                <div>
+                    <button class="btn-save" type="submit" value="Registrarse">Registrarse</button>
+                </div>
                 <h4 id="alert">
                     <div class="alertOK"></div>
 

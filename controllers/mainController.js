@@ -1,5 +1,4 @@
 const { getProducts } = require('../services/productService');
-const { registerUser } = require('../services/userService');
 
 const mainController = {
 
@@ -20,26 +19,8 @@ const mainController = {
         return res.render("login")
     },
     register: (req, res) => {
-
         return res.render("register");
-
     },
-    registerUserProcess: (req, res) => {
-
-        console.log(req.body);
-
-        registerUser(req.body)
-            .then(user => {
-                console.log(user);
-                return res.redirect("/");
-            })
-            .catch(errors => {
-                return res.render("register", {
-                    message: errors
-                })
-            })
-    },
-    
     item: (req, res) => {
         return res.render("item")
     },

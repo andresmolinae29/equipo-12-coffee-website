@@ -7,7 +7,7 @@ const { body } = require('express-validator');
 const validateCreateForm = require('../middlewares/validateCreateProductMiddleware');
 
 // ************ Controller Require ************
-const productsController = require('../controllers/productController');
+const productsController = require('../controllers/productControllerApi.js');
 
 const storage = multer.diskStorage({
 	destination: function(req, file, cb) {

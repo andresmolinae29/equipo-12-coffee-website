@@ -1,5 +1,4 @@
-// const {registerUser} = require("./services/userService")
-// import { register } from "../../controllers/mainController"
+
 
 window.addEventListener("load", function() {
 

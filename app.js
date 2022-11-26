@@ -27,15 +27,21 @@ app.use(logMiddleware);
 app.use(userLoggedMiddleware);
 
 const indexRouter = require("./routes/mainRoutes");
-const userRouter = require("./routes/userRoutes");
-const productRouter = require("./routes/productsRoutes");
+const userRouterApi = require("./routes/userRoutesApi");
+const productRouterApi = require("./routes/productRoutesApi");
+
+const userRoute = require("./routes/userRoutes.js");
+// const productRoute = require("./routes/userRoutes");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 app.use("/", indexRouter);
-app.use("/user", userRouter);
-app.use("/product", productRouter);
+app.use("/api/user", userRouterApi);
+app.use("/api/product", productRouterApi);
+
+app.use("/user", userRoute);
+// app.use("/product", productRoute);
 
 app.listen(3000, ()=>{
     console.log('Servidor funcionando');

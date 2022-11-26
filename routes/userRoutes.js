@@ -1,35 +1,25 @@
-// ************ Require's ************
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
+const path = require('path');
 
-// ************ Middelwares ************
-const guestMiddleware = require('../middlewares/guestMiddleware');
-const authMiddleware = require('../middlewares/authMiddleware');
-const validateRegisterForm = require('../middlewares/validateRegisterMiddleware');
-const validateLoginForm = require('../middlewares/validateLoginMiddleware');
+const mainController = require('../controllers/userController');
 
-// ************ Controller Require ************
-const usersController = require('../controllers/userController');
+const storage = multer.diskStorage({
+	destination: function(req, file, cb) {
+		cb(null, "public/images/users");
+	},
 
-router.get('/getAll', usersController.listAll); 
-router.post(
-    '/register', 
-    validateRegisterForm, 
-    usersController.processRegister
-    );
+	filename: function(req, file, cb) {
+		const newFileName = 'img-' + Date.now() + path.extname(file.originalname); 
+		cb(null,
+			newFileName);
+	}
+})
 
-router.put('/edit/:id', usersController.edit);
+const uploadFile = multer({ storage })
 
-router.delete('/delete/:id', usersController.destroy);
-
-// router.get('/login', guestMiddleware,usersController.login);
-// // router.post(
-// //     '/login', 
-// //     // validateLoginForm, 
-// //     usersController.processLogin);
-
-// router.get('/profile/', authMiddleware, usersController.profile);
-
-// router.get('/logout/', usersController.logout);
+// router.get('/register', mainController.register);
+router.post('/register', uploadFile.single('avatar'), mainController.registerUserProcess);
 
 module.exports = router;
