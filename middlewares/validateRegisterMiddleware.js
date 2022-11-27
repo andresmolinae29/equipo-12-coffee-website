@@ -1,15 +1,14 @@
+const path = require('path');
 const { body } = require('express-validator');
 
 module.exports = [
     body('userName').notEmpty().withMessage('El usuario no puede estar vacio'),
-    body('fullName').notEmpty().withMessage('El usuario no puede estar vacio'),
-    body('password').notEmpty().withMessage('Debe escribir una contrasena'),
+    body('fullName').notEmpty().withMessage('El nombre no puede estar vacio'),
+    body('password').notEmpty().withMessage('Debe escribir una contraseña'),
     body('passwordConfirmation')
         .notEmpty()
-        // .equals(body('password'))
-        .withMessage('Debe ser igual a la contrasena'),
+        .withMessage('Debe ser igual a la contraseña'),
     body('email')
-        .notEmpty().withMessage('No puede estar vacio')
+        .notEmpty().withMessage('No puede estar vacio').bail()
         .isEmail().withMessage('Debes escribir un formato de correo valido'),
-    body('avatar').notEmpty().withMessage('El nombre no debe estar vacio')
 ]

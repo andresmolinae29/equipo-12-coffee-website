@@ -1,25 +1,35 @@
 const User = require('../models/User');
 
-function userLoggedMiddleware (req, res, next) {
+function userLoggedMiddleware(req, res, next) {
     res.locals.isLogged = false;
 
-    // let emailInCookie = req.cookies.userEmail;
-    // let userFromCookie = User.findOneUser('email', emailInCookie);
+    let emailInCookie = req.cookies.userEmail;
 
-    // if (emailInCookie) {
-    //     delete userFromCookie.password;
-    // }
+    if (emailInCookie) {
+        User.findOneUser('email', emailInCookie)
+            .then(user => {
 
-    // // delete userFromCookie.password; // revisar si toca borrar esto!!
+                req.session.userLogged = user;
 
-    // if (userFromCookie) {
-    //     req.session.userLogged = userFromCookie;
-    // }
+                if (emailInCookie) {
+                    delete userFromCookie.password;
+                }
+                if (userFromCookie) {
+                    req.session.userLogged = userFromCookie;
+                }
+                return user;
+            }
+            )
+            .catch(errors => {
+                return "fallo";
+            })
+    }
 
-    // if (req.session && req.session.userLogged) {
-    //     res.locals.isLogged = true;
-    //     res.locals.userLogged = req.session.userLogged;
-    // }
+
+    if (req.session && req.session.userLogged) {
+        res.locals.isLogged = true;
+        res.locals.userLogged = req.session.userLogged;
+    }
 
     next();
 }

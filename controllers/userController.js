@@ -1,28 +1,86 @@
-const { getProducts } = require('../services/productService');
-const { registerUser } = require('../services/userService');
+const { registerUser, loginUser } = require('../services/userService');
+const { validationResult } = require('express-validator');
 
 const userController = {
 
+    login: (req, res) => {
+        return res.render("login");
+    },
+
+    loginProcess: (req, res) => {
+
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0) {
+            console.log(resultValidation.mapped());
+            return res.render("login", {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            })
+        }
+
+        let data = req.body
+
+        loginUser(data)
+            .then(result => {
+                console.log(result);
+                if (result.message) {
+                    return res.render("login", {
+                        message: result.message
+                    });
+                } else {
+
+                    delete result.userLogged.password;
+                    req.session.userLogged = result.userLogged;
+
+                    if (req.body.rememberMe) {
+                        res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60})
+                    }
+
+                    return res.redirect("/");
+                }
+
+            })
+            .catch(errors => {
+                return res.render("login", {
+                    message: errors
+                })
+            })
+    },
+
+    register: (req, res) => {
+        return res.render("register");
+    },
+
     registerUserProcess: (req, res) => {
+
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0) {
+            console.log(resultValidation.mapped());
+            return res.render("register", {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            })
+        }
+
+        let filename = req.file ? req.file.filename : "img-default.jpg";
 
         const data = {
             ...req.body,
-            avatar: req.file.filename ? "img-default.jpg" : req.file.filename
+            avatar: filename
         };
-
-        console.log(data);
 
         registerUser(data)
             .then(result => {
-                console.log(result)
-                if (result.errors) {
+                if (result.message) {
+                    console.log(result.message);
                     return res.render("register", {
-                        message: errors
+                        errors: result.message,
                     });
                 } else {
-                    return res.redirect("/")
+                    return res.redirect("/user/login");
                 }
-                
             })
             .catch(errors => {
                 return res.render("register", {
@@ -31,8 +89,10 @@ const userController = {
             })
     },
 
-    item: (req, res) => {
-        return res.render("item")
+    logout: (req, res) => {
+        res.clearCookie('userEmail');
+        req.session.destroy();
+        return res.redirect('/')
     },
 }
 

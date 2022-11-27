@@ -2,12 +2,6 @@ const db = require('../database/models');
 
 const User = {
     
-    // getData: function () {
-    //     users = db.User.findAll();
-
-    //     return users;
-    // },
-
     findAll: function () {
 
         return db.User.findAll();

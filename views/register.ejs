@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/5cc45362ff.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Roboto:wght@100;300;400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./css/registerStyle.css">
+    <link rel="stylesheet" href="/css/registerStyle.css">
 </head>
 
 <body>
@@ -16,27 +16,91 @@
 
         <div class="container">
             <h3>Registrarse</h3>
+            <% if (locals.errors && errors) { %>
+                <div class="text-danger">
+                    <%= errors %>
+                </div>
+                <% } %>
             <form action="/user/register" method="POST" enctype="multipart/form-data">
                 <div>
-                    <input id="fullName" type="text" class="field" placeholder="Nombre y apellido" name="fullName">
                     <label for="fullName" class="label-input"></label>
+                    <input 
+                        id="fullName" 
+                        type="text" 
+                        class="field <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"   
+                        name="fullName"
+                        placeholder="Nombre y apellido"
+                        <% if (locals.oldData && oldData.fullName) { %>
+                            value = <%= oldData.fullName %> 
+                        <% } %>>
+                        <% if (locals.errors && errors.fullName) { %>
+                        <div class="text-danger">
+                            <%= errors.fullName.msg %>
+                        </div>
+                        <% } %>
                 </div>
                 <div>
-                    <input id="userName" type="text" class="field" placeholder="Usuario" name="userName">
                     <label for="userName" class="label-input"></label>
+                    <input 
+                        id="userName" 
+                        type="text" 
+                        class="field" 
+                        placeholder="Usuario" 
+                        name="userName"
+                        <% if (locals.oldData && oldData.userName) { %>
+                            value = <%= oldData.userName %> 
+                        <% } %>>
+                        <% if (locals.errors && errors.userName) { %>
+                        <div class="text-danger">
+                            <%= errors.userName.msg %>
+                        </div>
+                        <% } %>
                 </div>
                 <div>
-                    <input id="password" type="password" class="field" placeholder="Contraseña" name="password">
                     <label for="password" class="label-input"></label>
+                    <input 
+                        id="password" 
+                        type="password" 
+                        class="field" 
+                        placeholder="Contraseña" 
+                        name="password">
+                        <% if (locals.errors && errors.password) { %>
+                            <div class="text-danger">
+                                <%= errors.password.msg %>
+                            </div>
+                            <% } %>
                 </div>
                 <div>
-                    <input id="passwordConfirmation" type="password" class="field" placeholder="Confirmar contraseña"
-                        name="passwordConfirmation">
                     <label for="passwordConfirmation" class="label-input"></label>
+                    <input 
+                        id="passwordConfirmation" 
+                        type="password" 
+                        class="field" 
+                        placeholder="Confirmar contraseña"
+                        name="passwordConfirmation">
+                        <% if (locals.errors && errors.passwordConfirmation) { %>
+                            <div class="text-danger">
+                                <%= errors.passwordConfirmation.msg %>
+                            </div>
+                            <% } %>
                 </div>
                 <div>
-                    <input id="email" type="email" class="field" placeholder="Email" name="email">
                     <label for="email" class="label-input"></label>
+                    <input 
+                        id="email" 
+                        type="email" 
+                        class="field" 
+                        placeholder="Email" 
+                        name="email"
+                        <% if (locals.oldData && oldData.email) { %>
+                            value = <%= oldData.email %> 
+                        <% } %>>
+                        <% if (locals.errors && errors.email) { %>
+                        <div class="text-danger">
+                            <%= errors.email.msg %>
+                        </div>
+                        <% } %>
+
                 </div>
                 <div class="input-select">
                     <div class="imgUpload">

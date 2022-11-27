@@ -4,6 +4,7 @@ const multer = require('multer');
 const path = require('path');
 
 const mainController = require('../controllers/mainController');
+const guestMiddleware = require('../middlewares/guestMiddleware');
 
 const storage = multer.diskStorage({
 	destination: function(req, file, cb) {
@@ -21,10 +22,6 @@ const uploadFile = multer({ storage })
 
 router.get('/', mainController.index);
 router.get('/cart', mainController.cart);
-router.get('/login', mainController.login);
-
-router.get('/register', mainController.register);
-// router.post('/register', uploadFile.single('avatar'), mainController.registerUserProcess);
 
 router.get('/create', mainController.create);
 router.get('/item', mainController.item);
