@@ -11,8 +11,6 @@ const mainController = {
         const newProducts = await getFilterProducts("category", "new");
         const saleProducts = await getFilterProducts("category", "sale");
 
-        console.log(newProducts, saleProducts);
-
         return res.render("home", { newProducts : newProducts.products , saleProducts : saleProducts.products })
     },
 
@@ -22,15 +20,6 @@ const mainController = {
 
     item: (req, res) => {
         return res.render("item")
-    },
-
-    test: (req, res) => {
-        return res.render("test")
-    },
-
-    testSend: (req, res) => {
-        console.log(req.body);
-        return res.render("test")
     }
 }
 

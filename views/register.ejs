@@ -31,7 +31,7 @@
                         name="fullName"
                         placeholder="Nombre y apellido"
                         <% if (locals.oldData && oldData.fullName) { %>
-                            value = <%= oldData.fullName %> 
+                            value = "<%= oldData.fullName %>"
                         <% } %>>
                         <% if (locals.errors && errors.fullName) { %>
                         <div class="text-danger">

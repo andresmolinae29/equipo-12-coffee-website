@@ -24,15 +24,54 @@
 				<div class="row product-detail">
 					<div>
 						<label for="name" class="form-label"></label>
-						<input name="name" type="text" id="name" placeholder="Nombre del producto" class="form-input">
+						<input 
+							name="name" 
+							type="text" 
+							id="name" 
+							placeholder="Nombre del producto" 
+							class="form-input"
+							<% if (locals.oldData && oldData.name) { %>
+								value = "<%= oldData.name %>"
+							<% } %>>
+							<% if (locals.errors && errors.name) { %>
+							<div class="text-danger">
+								<%= errors.name.msg %>
+							</div>
+							<% } %>
 					</div>
 					<div>
 						<label for="price" class="form-label"></label>
-						<input name="price" type="text" id="price" placeholder="Precio" class="form-input">
+						<input 
+							name="price" 
+							type="text"
+							id="price" 
+							placeholder="Precio" 
+							class="form-input"
+							<% if (locals.oldData && oldData.price) { %>
+								value = <%= oldData.price %> 
+							<% } %>>
+							<% if (locals.errors && errors.price) { %>
+							<div class="text-danger">
+								<%= errors.price.msg %>
+							</div>
+							<% } %>
 					</div>
 					<div>
 						<label for="discount" class="form-label"></label>
-						<input name="discount" type="text" id="discount" placeholder="Descuento" class="form-input">
+						<input 
+							name="discount" 
+							type="text" 
+							id="discount" 
+							placeholder="Descuento" 
+							class="form-input"
+							<% if (locals.oldData && oldData.discount) { %>
+								value = <%= oldData.discount %> 
+							<% } %>>
+							<% if (locals.errors && errors.discount) { %>
+							<div class="text-danger">
+								<%= errors.discount.msg %>
+							</div>
+							<% } %>
 					</div>
 					<div>
 						<label for="size" class="form-label"></label>
@@ -59,11 +98,31 @@
 					</div>
 					<div>
 						<label for="longDescription" class="form-label"></label>
-						<textarea name="longDescription" id="longDescription" class="form-input" placeholder="Descripción del producto"></textarea>
+						<textarea 
+							name="longDescription" 
+							id="longDescription" 
+							class="form-input" 
+							placeholder="Descripción del producto"
+							><% if (locals.oldData && oldData.longDescription) { %><%=oldData.longDescription%><% } %></textarea>
+							<% if (locals.errors && errors.longDescription) { %>
+							<div class="text-danger">
+								<%= errors.longDescription.msg %>
+							</div>
+							<% } %>
 					</div>
 					<div>
 						<label for="description" class="form-label"></label>
-						<textarea name="description" id="description" class="form-input" placeholder="Descripción corta"></textarea>
+						<textarea 
+							name="description" 
+							id="description" 
+							class="form-input" 
+							placeholder="Descripción corta"
+							><% if (locals.oldData && oldData.description) { %><%=oldData.description%><% } %></textarea>
+							<% if (locals.errors && errors.description) { %>
+							<div class="text-danger">
+								<%= errors.description.msg %>
+							</div>
+							<% } %>
 					</div>
 					<div>
 						<label for="img" class="btn-save foto">Foto del producto</label>

@@ -28,8 +28,18 @@ router.get('/create', productController.create);
 router.post(
 	'/create',
 	uploadFile.single('img'),
-	// validateCreateProductForm,
+	validateCreateProductForm,
 	productController.createProcess
+	);
+
+router.get('/detail/:id', productController.viewDetail);
+
+router.get('/edit/:id', productController.edit);
+router.put(
+	'/edit/:id',
+	uploadFile.single('img'),
+	// validateCreateProductForm,
+	productController.editProcess
 	);
 
 module.exports = router;

@@ -43,7 +43,6 @@ const controller = {
 	store: (req, res) => {
 
 		let product = req.body;
-		product.img = req.file;
 
 		if (!product.img) {
 			product.img = 'img-default.jpg'

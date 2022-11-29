@@ -31,7 +31,7 @@ const deleteOneProduct = (id) => {
 }
 
 const editProduct = (id, data) => {
-    return axios.post("localhost:3000/api/product/edit/" + id, data)
+    return axios.put("http://localhost:3000/api/product/edit/" + id, data)
             .then(response => { return response.data })
             .catch(error => { return error});
 }

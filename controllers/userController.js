@@ -12,7 +12,7 @@ const userController = {
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
-            console.log(resultValidation.mapped());
+      
             return res.render("login", {
                 errors: resultValidation.mapped(),
                 oldData: req.body
@@ -23,7 +23,7 @@ const userController = {
 
         loginUser(data)
             .then(result => {
-                console.log(result);
+              
                 if (result.message) {
                     return res.render("login", {
                         message: result.message
@@ -74,7 +74,7 @@ const userController = {
         registerUser(data)
             .then(result => {
                 if (result.message) {
-                    console.log(result.message);
+                
                     return res.render("register", {
                         errors: result.message,
                     });
