@@ -1,0 +1,35 @@
+const express = require('express');
+const router = express.Router();
+
+const validateCreateProductForm = require('../middlewares/validateCreateProductMiddleware');
+
+// ************ Middelwares ************
+const productController = require('../controllers/productController');
+
+
+const path = require('path');
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+	destination: function (req, file, cb) {
+		cb(null, "public/images/products");
+	},
+
+	filename: function (req, file, cb) {
+		const newFileName = 'img-' + Date.now() + path.extname(file.originalname);
+		cb(null, newFileName);
+	}
+})
+
+const uploadFile = multer({ storage })
+
+router.get('/create', productController.create);
+
+router.post(
+	'/create',
+	uploadFile.single('img'),
+	// validateCreateProductForm,
+	productController.createProcess
+	);
+
+module.exports = router;

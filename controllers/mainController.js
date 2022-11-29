@@ -1,29 +1,37 @@
-const { getProducts } = require('../services/productService');
+const { setRandomFallback } = require('bcryptjs');
+const { getProducts, getFilterProducts } = require('../services/productService');
+
+// const response = await getProducts();
+        // console.log(response);
 
 const mainController = {
 
     index: async (req, res) => {
-        const response = await getProducts();
-        return res.render("home", response)
+        
+        const newProducts = await getFilterProducts("category", "new");
+        const saleProducts = await getFilterProducts("category", "sale");
+
+        console.log(newProducts, saleProducts);
+
+        return res.render("home", { newProducts : newProducts.products , saleProducts : saleProducts.products })
     },
-    create: (req, res) => {
-        return res.render("product-create-form")
-    },
-    edit: (req, res) => {
-        return res.render("product-edit-form")
-    },
+
     cart: (req, res) => {
         return res.render("cart")
     },
-    login: (req, res) => {
-        return res.render("login")
-    },
-    register: (req, res) => {
-        return res.render("register");
-    },
+
     item: (req, res) => {
         return res.render("item")
     },
+
+    test: (req, res) => {
+        return res.render("test")
+    },
+
+    testSend: (req, res) => {
+        console.log(req.body);
+        return res.render("test")
+    }
 }
 
 module.exports = mainController;

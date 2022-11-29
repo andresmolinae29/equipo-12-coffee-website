@@ -42,19 +42,10 @@ const controller = {
 	// Create -  Method to store
 	store: (req, res) => {
 
-		const resultValidation = validationResult(req);
-
-		if (resultValidation.errors.length > 0) {
-			return res.json({
-				errors: resultValidation.mapped(),
-				oldData: req.body
-			});
-		}
-
 		let product = req.body;
 		product.img = req.file;
 
-		if (product.img == undefined) {
+		if (!product.img) {
 			product.img = 'img-default.jpg'
 		};
 

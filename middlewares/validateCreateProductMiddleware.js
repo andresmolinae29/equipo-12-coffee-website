@@ -10,7 +10,7 @@ module.exports = [
 	body('category').notEmpty().withMessage("Debes completar el campo"),
 	body('longDescription').notEmpty().withMessage("Debes completar el campo"),
 	body('sellingCategory').notEmpty().withMessage("Debes completar el campo"),
-    body('fileName').custom((value, { req }) => {
+    body('img').custom((value, { req }) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.gif'];
 

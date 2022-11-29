@@ -17,29 +17,25 @@
         <div class="container">
             <main>
                 <section class="last-visit">
-                    <h3>Basado en tu última visita</h3>
+                    <h3>Productos nuevos</h3>
                 <div class="products">
 
-                    <% for( const product of products ) {  %>
-
+                    <% newProducts.forEach(product => { %>
                         <%- include('./partials/product', { product }) %>
+                    <% });  %>
 
-                    <% } %>
-                    
-                </div>
+
+                    </div>
                 </section>
     
                 <section class="offers">
                     <h3>Ofertas</h3>
                     <div class="products">
-    
                         
-                        <% for( const product of products ) {  %>
+                        <% saleProducts.forEach(product => { %>
+                            <%- include('./partials/product', { product }) %>
+                        <% });  %>
     
-                            <%-  include('./partials/product', { product }) %>
-    
-                        <% } %>
-                        
             
                         </div>  --> 
                 </section>

@@ -24,20 +24,19 @@
 				<div class="row product-detail">
 					<div>
 						<label for="name" class="form-label"></label>
-						<input type="text" id="name" for="name" placeholder="Nombre del producto" class="form-input">
+						<input name="name" type="text" id="name" placeholder="Nombre del producto" class="form-input">
 					</div>
 					<div>
 						<label for="price" class="form-label"></label>
-						<input type="text" id="price" for="price" placeholder="Precio" class="form-input">
+						<input name="price" type="text" id="price" placeholder="Precio" class="form-input">
 					</div>
 					<div>
 						<label for="discount" class="form-label"></label>
-						<input type="text" id="discount" for="discount" placeholder="Descuento" class="form-input">
+						<input name="discount" type="text" id="discount" placeholder="Descuento" class="form-input">
 					</div>
 					<div>
 						<label for="size" class="form-label"></label>
 						<select name="size" id="size" class="form-input">
-							<option value="">Tamaño</option>
 							<option value="250gr">250gr</option>
 							<option value="1kg">1kg</option>
 							<option value= null>N/A</option>
@@ -46,7 +45,6 @@
 					<div>
 						<label for="category" class="form-label"></label>
 						<select name="category" id="category" class="form-input">
-							<option value="">Categoría</option>
 							<option value="cafe">Café</option>
 							<option value="cafeteras">Cafeteras</option>
 							<option value="accesorios">Accesorios</option>
@@ -55,22 +53,21 @@
 					<div>
 						<label for="sellingCategory" class="form-label"></label>
 						<select name="sellingCategory" id="sellingCategory" class="form-input">
-							<option value="">Tipo de venta</option>
 							<option value="sale">Oferta</option>
-							<option value="fullPrice">Sin oferta</option>
+							<option value="new">Sin oferta</option>
 						</select>
 					</div>
 					<div>
 						<label for="longDescription" class="form-label"></label>
-						<textarea for="longDescription" id="longDescription" class="form-input" placeholder="Descripción del producto"></textarea>
+						<textarea name="longDescription" id="longDescription" class="form-input" placeholder="Descripción del producto"></textarea>
 					</div>
 					<div>
 						<label for="description" class="form-label"></label>
-						<textarea for="description" id="description" class="form-input" placeholder="Descripción corta"></textarea>
+						<textarea name="description" id="description" class="form-input" placeholder="Descripción corta"></textarea>
 					</div>
 					<div>
 						<label for="img" class="btn-save foto">Foto del producto</label>
-						<br><input type="file" for="img" id="foto" name="fotoProducto" class="form-input">
+						<br><input type="file" id="img" name="img" class="form-input">
 					</div>
 					<div>
 						<button type="submit" class="btn-save">Guardar producto</button>
