@@ -1,9 +1,8 @@
-/* const fs = require('fs');
+const fs = require('fs');
 
-function 404Middleware(req, res, next) {
-    fs.appendFileSync('logDB.txt', 'Se creo un registro al ingresar a ' + req.url);
-
+function errMiddleware(req, res, next) {
+    res.status(404).render("404")
     next();
 }
 
-module.exports = err404Middleware; */
+module.exports = errMiddleware; 

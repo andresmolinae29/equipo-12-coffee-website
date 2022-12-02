@@ -7,6 +7,7 @@ const cookies = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+const error404 = require('./middlewares/err404Middleware');
 
 app.use(session( {
   secret: 'Shhh, It is a secret',
@@ -46,3 +47,4 @@ app.use("/user", userRoute);
 app.listen(3000, ()=>{
     console.log('Servidor funcionando');
   });
+  app.use(error404);

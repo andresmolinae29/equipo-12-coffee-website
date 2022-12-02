@@ -1,0 +1,26 @@
+body{
+    margin: 0px;
+    padding-left: 45px;
+    padding-right: 45px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    background-color: gainsboro
+}
+.blog{
+    padding-left: 45px;
+    color: rgba(39,39,39,0.)
+}
+.img{
+    width: 800px;
+    height: 300px;
+    margin-left: 15%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+h3{
+    font-size: 36px;
+}
+h4{
+    font-size: 24px;
+    margin-left: 10px;
+}

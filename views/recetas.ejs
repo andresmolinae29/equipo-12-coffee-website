@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Nuestro café - Mercadito de café</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5cc45362ff.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Roboto:wght@100;300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/recetasStyle.css">
+</head>
+
+<body>
+    <%- include("./partials/header") %>
+
+    <h3>Recetas</h3>
+        <div class="container">
+            <div class="receta">
+                <div class="rec-foto"><img src="./images/recetas/v60.jpg">
+                </div>
+                <div class="rec-title">
+                    <h4>V60 Básico</h4>
+                    <br>
+                    <div class="texto"><p>
+                        <h4>Ingredientes</h4>
+                        <li>Agua: 260gr a 91°c.</li>
+                        <li>Café: 18gr molienda media.</li>
+                        <br>
+                        <h4>Pasos</h4>
+                        <li>Humedecer el filtro y descartar excedente.</li>
+                        <li>Agregá el café.</li>
+                        <li>Añadir 60gr de agua lentamente en circulos y esperá 25seg.</li>
+                        <li>Agregá 60gr más, lentamente, hasta que se filtre casi toda el agua.</li>
+                        <li>Repetí el paso anterior nuevamente.</li>
+                        <li>Repetí el paso anterior 2 veces más, pero con 40 gramos en vez de 60.</li>
+                        <br><br><br>
+                        <h4>¡Listo, disfrutá tu café!</h4>
+                        <br>
+                    </p></div>
+                </div>
+            </div>
+            <div class="receta">
+                <div class="rec-foto"><img src="./images/recetas/prensa.jpg">
+                </div>
+                <div class="rec-title">
+                    <h4>Prensa Francesa</h4>
+                    <br>
+                    <div class="texto"><p>
+                        <h4>Ingredientes</h4>
+                        <li>Agua: 300gr a 90°c</li>
+                        <li>Café: 20gr molienda gruesa</li>
+                        <br><br>
+                        <h4>Pasos</h4>
+                        <li>Calentar la prensa con agua y descartar</li>
+                        <li>Agregá el café</li>
+                        <li>Añadir toda el agua y mezclar un poco con una cuchara</li>
+                        <li>La turbulencia generada hidratará todo el café</li>
+                        <li>Esperar 3min, tapar y bajar el embolo despacio para no generar turbulencia</li>
+                        <br><br><br>
+                        <h4>¡Listo, disfrutá tu café!</h4>
+                        <br>
+                    </p></div>
+                </div>
+            </div>
+            <div class="receta">
+                <div class="rec-foto"><img src="./images/recetas/melita.jpg">
+                </div>
+                <div class="rec-title">
+                    <h4>Kalita Wave</h4>
+                    <br>
+                    <div class="texto"><p>
+                        <h4>Ingredientes</h4>
+                        <li>Agua: 250gr a 90°c</li>
+                        <li>Café: 15gr molienda media</li>
+                        <br>
+                        <h4>Pasos</h4>
+                        <li>Humedecer el filtro y descartar excedente</li>
+                        <li>Agregá el café</li>
+                        <li>Añadir 50gr de agua en circulos y esperá 30seg</li>
+                        <li>Agregá 75gr más de agua muy lentamente, desde el centro hacia el borde, y esperá que se filtre casi toda el agua</li>
+                        <li>Repetí el paso anterior nuevamente</li>
+                        <li>Repetí el paso anterior una última vez, pero con 50 gramos.</li>
+                        <br>
+                        <h4>¡Listo, disfrutá tu café!</h4>
+                        <br>
+                    </p></div>
+                </div>
+            </div>
+        </div>
+
+        <%- include("./partials/footer") %>
+    </body>
+</html>

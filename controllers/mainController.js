@@ -24,6 +24,16 @@ const mainController = {
     item: (req, res) => {
         return res.render("item")
     },
+    nuestroCafe: (req, res) => {
+        return res.render("nuestroCafe")
+    },
+    recetas: (req, res) => {
+        return res.render("recetas")
+    },
+    productos: async (req, res) => {
+        const response = await getProducts();
+        return res.render("productos", response)
+    },
 }
 
 module.exports = mainController;

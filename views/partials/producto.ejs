@@ -1,13 +1,14 @@
 <link rel='stylesheet' href='/css/producto.css' />
 
-<article class="card">
+<div class="card">
     <div class="item-main">
-        <img src="/images/products/<%= product.img  %>" class="img">
-        <i class="fas fa-truck"></i>
+        <div class="product-img">
+        <img src="/images/products/<%= product.img  %>" class="img"></div>
+        <div class="prod-text">
         <p class="prod-name"><%= product.name  %></p>
-        <p class="prod-price">$<%= product.price  %></p>
-        <h4 class="prod-description"><%= product.description  %></h4>
+        <p class="prod-price">$<%= product.price  %></p></div>
+        <div class="btn">
         <a href="/item/<%= product.id  %>"><button class="ver-mas">Ver Más</button></a>
-        <a href="/cart"><button class="Comprar">Comprar</button></a>
+        <a href="/cart"><button class="Comprar">Comprar</button></a></div>
     </div>
-  </article>
+</div>

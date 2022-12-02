@@ -22,6 +22,9 @@ const uploadFile = multer({ storage })
 router.get('/', mainController.index);
 router.get('/cart', mainController.cart);
 router.get('/login', mainController.login);
+router.get('/nuestro-cafe', mainController.nuestroCafe);
+router.get('/recetas', mainController.recetas);
+router.get('/productos', mainController.productos);
 
 router.get('/register', mainController.register);
 // router.post('/register', uploadFile.single('avatar'), mainController.registerUserProcess);

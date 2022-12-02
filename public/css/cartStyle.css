@@ -21,12 +21,9 @@ section h4 {
 }
 
 .tabla-carrito {
-    
-    background-color: white;
-    /* margin: auto; */
+    border-radius: 5px;
     width: 100%;
     border-collapse: collapse;
-    border-bottom: 1px solid white;
     table-layout: fixed;
 }
 
@@ -51,10 +48,6 @@ section h4 {
    padding: 0;
 }
 
-.tabla-carrito tr td:hover {
-    background-color: #D6EEEE;
-}
-
 .tabla-carrito tr { 
     display: flex; 
     flex-direction: row;
@@ -64,13 +57,6 @@ section h4 {
 
 .tabla-carrito td, th {
     flex: 1 1 150px;
-}
-
-.capsula-carrito {
-    padding-bottom: 30px;
-    padding-left: 3%;
-    padding-right: 3%;
-    background-color: white;
 }
 
 form input, form label select {
@@ -127,7 +113,6 @@ form input, form label select {
     /* margin: auto; */
     /* width: 100%; */
     /* border-collapse: collapse; */
-    border-bottom: 0px solid white;
     table-layout:fixed;
 }
 

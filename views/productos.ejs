@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Mercadito de café - Login</title>
+        <title>Mercadito de café - Productos</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/5cc45362ff.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
@@ -12,12 +12,9 @@
     <body>
         <%- include("./partials/header") %>
         
-        <%- include("./partials/slide") %>
-        
         <div class="container">
             <main>
                 <section class="container-filtred">
-                    <h3>Basado en tu última visita</h3>
                 <div class="products">
 
                     <% for( const product of products ) {  %>
@@ -27,21 +24,6 @@
                     <% } %>
                     
                 </div>
-                </section>
-    
-                <section class="container-filtred">
-                    <h3>Ofertas</h3>
-                    <div class="products">
-    
-                        
-                        <% for( const product of products ) {  %>
-    
-                            <%-  include('./partials/producto', { product }) %>
-    
-                        <% } %>
-                        
-            
-                        </div>
                 </section>
         </div>
 
