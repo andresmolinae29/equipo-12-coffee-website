@@ -1,3 +1,8 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
 
 footer {
     background-color: #ebebeb;
@@ -25,14 +30,17 @@ footer .cont-footer-uno {
     flex-grow: 0.5;
 }
 
-footer .cont-footer-base {
+footer .cont-footer-tres {
     display: flex;
     flex-wrap: wrap;
     margin: auto;
     flex-direction: row;
-    align-items: center;
     margin: auto;
     padding: 2px;
+}
+
+.fa-brands {
+    padding: 10px;
 }
 
 footer .cont-footer-base p,
@@ -61,25 +69,13 @@ footer .cont-footer-dos {
     flex-direction: row;
     flex-wrap: wrap;
 }
-
-footer .cont-footer-tres {
-    display: flex;
-    justify-items:stretch;
-    justify-content: space-around;
-    flex-grow: 0.5;
-    flex-direction: column;
-    flex-wrap: wrap;
+a{
+    text-decoration: none;
 }
 
-footer .cont-footer-tres img {
-    width: 10px;
+a:visited {
+    color: rgba(39, 39, 39)
 }
-
-.cont-footer-base i {
-    font-size: 30px;
-}
-
-
 
 
 @media (min-width: 361px){

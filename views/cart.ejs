@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/cartStyle.css">
     <script src="https://kit.fontawesome.com/5cc45362ff.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Carrito - Mercadito de café</title>
 </head>
 <body>
     <%- include("./partials/header") %> 
@@ -20,26 +20,23 @@
                 <tr>
                     <th>Item</th>
                     <th>Detalle</th>
-                    <th>Opcion</th>
+                    <th>Tamaño</th>
                     <th>Precio</th>
                     <th>Cantidad</th>
-                    <th>Total</th>
                 </tr>
                 <tr>
-                    <td><img scr="" alt="image"></td>
-                    <td>xxxxxx</td>
-                    <td>xxxxxx</td>
-                    <td>$$$</td>
+                    <td><img scr="./images/products/img-burundi-espresso.jpg"></td>
+                    <td>Café Colombia</td>
+                    <td>250gr</td>
+                    <td>$ 1500</td>
                     <td>1</td>
-                    <td>$$$$</td>
                 </tr>
                 <tr>
-                    <td><img scr="" alt="image"></td>
-                    <td>xxxxxx</td>
-                    <td>xxxxxx</td>
-                    <td>$$$</td>
+                    <td><img scr="./images/products/img-costa-origin.jpg"></td>
+                    <td>Café Brasil</td>
+                    <td>1kg</td>
+                    <td>$ 5500</td>
                     <td>1</td>
-                    <td>$$$$</td>
                 </tr>
             </table>
         </div>
@@ -72,23 +69,19 @@
                 <table class="subtotal-table">
                     <tr>
                         <th>Subtotal</th>
-                        <td>$$$</td>
+                        <td>$ 7000</td>
                     </tr>
                     <tr>
                         <th>Envio</th>
-                        <td>$$$</td>
-                    </tr>
-                    <tr>
-                        <th>Impuestos</th>
-                        <td>$$$</td>
+                        <td>$ 1000</td>
                     </tr>
                     <tr>
                         <th>Total</th>
-                        <td>$$$</td>
+                        <td>$ 8000</td>
                     </tr>
                   </table>
-                  <form action="/pago" method="post">
-                    <input class="button-pay" type="submit" name="enviar" value="Continuar con el pago">
+                  <form action="#">
+                    <input class="button-pay" type="submit" name="enviar" value="Ir al pago">
                 </form>
             </div>
         </div>
