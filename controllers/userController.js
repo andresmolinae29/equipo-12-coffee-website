@@ -19,7 +19,7 @@ const userController = {
             })
         }
 
-        let data = req.body
+        let data = req.body;
 
         loginUser(data)
             .then(result => {
@@ -57,7 +57,7 @@ const userController = {
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
-            console.log(resultValidation.mapped());
+  
             return res.render("register", {
                 errors: resultValidation.mapped(),
                 oldData: req.body
@@ -74,9 +74,9 @@ const userController = {
         registerUser(data)
             .then(result => {
                 if (result.message) {
-                
+           
                     return res.render("register", {
-                        errors: result.message,
+                        message: result.message,
                     });
                 } else {
                     return res.redirect("/user/login");

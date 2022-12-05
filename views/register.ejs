@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Roboto:wght@100;300;400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/css/registerStyle.css">
+    <script src="/js/registerUser.js"></script>
 </head>
 
 <body>
@@ -16,9 +17,9 @@
 
         <div class="container">
             <h3>Registrarse</h3>
-            <% if (locals.errors && errors) { %>
+            <% if (locals.message && message) { %>
                 <div class="text-danger">
-                    <%= errors %>
+                    <%= message %>
                 </div>
                 <% } %>
             <form action="/user/register" method="POST" enctype="multipart/form-data">
@@ -38,6 +39,7 @@
                             <%= errors.fullName.msg %>
                         </div>
                         <% } %>
+                        <div class="text-danger" id="nameError"></div>
                 </div>
                 <div>
                     <label for="userName" class="label-input"></label>
@@ -55,6 +57,7 @@
                             <%= errors.userName.msg %>
                         </div>
                         <% } %>
+                        <div class="text-danger" id="userNameError"></div>
                 </div>
                 <div>
                     <label for="password" class="label-input"></label>
@@ -69,6 +72,7 @@
                                 <%= errors.password.msg %>
                             </div>
                             <% } %>
+                            <div class="text-danger" id="passwordError"></div>
                 </div>
                 <div>
                     <label for="passwordConfirmation" class="label-input"></label>
@@ -83,6 +87,7 @@
                                 <%= errors.passwordConfirmation.msg %>
                             </div>
                             <% } %>
+                            <div class="text-danger" id="passwordConfirmationError"></div>
                 </div>
                 <div>
                     <label for="email" class="label-input"></label>
@@ -100,6 +105,7 @@
                             <%= errors.email.msg %>
                         </div>
                         <% } %>
+                        <div class="text-danger" id="emailError"></div>
 
                 </div>
                 <div class="input-select">

@@ -11,7 +11,7 @@ const controller = {
             .then(users => {
                 return res.status(200).json({
                     status: 200,
-                    count: users.length,
+                    qty: users[0].length,
                     users: users
                 });
             })
@@ -69,7 +69,7 @@ const controller = {
             .then(user => {
                 if (user) {
                     let passwordVerification = bcrypt.compareSync(userTologin.password, user.password);
-                    console.log(passwordVerification);
+
 
                     if (passwordVerification == true) {
 

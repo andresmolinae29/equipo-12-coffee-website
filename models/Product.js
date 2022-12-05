@@ -1,9 +1,10 @@
 const db = require('../database/models');
+const Sequelize = require('sequelize');
 
 const Product = {
 
     getData: function () {
-        products = db.Product.findAll();
+        let products = db.Product.findAll();
 
         return products;
     },
@@ -16,14 +17,14 @@ const Product = {
 
     findByPk: function (id) {
 
-        product = db.Product.findByPk(id);
+        let product = db.Product.findByPk(id);
 
         return product;
     },
 
     findOneProduct: function (field, text) {
 
-        product = db.Product.findOne({
+        let product = db.Product.findOne({
             where: {
                 [field]: text
             }
@@ -34,7 +35,7 @@ const Product = {
 
     filterByField: function (field, value) {
 
-        products = db.Product.findAll({
+        let products = db.Product.findAll({
             where: {
                 [field]: value
             }
@@ -54,7 +55,7 @@ const Product = {
 
     delete: function (productId) {
 
-        product = this.findByPk(productId);
+        let product = this.findByPk(productId);
 
         db.Product.destroy({
             where: {
@@ -67,7 +68,7 @@ const Product = {
 
     edit: function (id, productData) {
 
-        product = db.Product.update(
+        let product = db.Product.update(
             {
                 ...productData
             },
@@ -80,6 +81,30 @@ const Product = {
         )
 
         return product;
+    },
+
+    categories: function () {
+        
+        let categories = db.Product.findAll({
+            attributes: [
+                [Sequelize.fn('DISTINCT', Sequelize.col('sellingCategory')) ,'sellingCategory']
+            ],
+            
+        });
+
+        return categories;
+    },
+
+    lastProduct: function() {
+
+        let lastProduct = db.Product.findAll({
+            limit: 1,
+            order: [[
+                'createdAt', 'DESC'
+            ]]
+        });
+
+        return lastProduct;
     }
 }
 

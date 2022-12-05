@@ -1,5 +1,9 @@
 USE db_coffee;
 
+DELETE FROM products;
+
+SELECT * FROM products;
+
 INSERT INTO products 
 	(
     name,

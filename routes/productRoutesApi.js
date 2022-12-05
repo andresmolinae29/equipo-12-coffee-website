@@ -44,6 +44,10 @@ router.get('/detail/:id', productsController.detail);
 router.put('/edit/:id', productsController.update); 
 
 /*** DELETE ONE PRODUCT ***/ 
-router.delete('/delete/:id', productsController.destroy); 
+router.delete('/delete/:id', productsController.destroy);
+
+router.get('/categories', productsController.categories);
+
+router.get('/lastProduct', productsController.lastProduct);
 
 module.exports = router;

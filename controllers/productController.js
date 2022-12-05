@@ -8,7 +8,6 @@ const productController = {
 
     createProcess: (req, res) => {
 
-        // console.log(JSON.parse(JSON.stringify(req.body)));
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
@@ -90,15 +89,14 @@ const productController = {
 
         const id = req.params.id;
 
-        console.log("id", id);
 
         editProduct(id, data)
             .then(productEditted => {
-                console.log("edicion", productEditted)
+ 
                 return res.redirect("/product/detail/"+id);
             })
             .catch(errors => {
-                console.log(errors);
+   
                 return res.render("product-edit-form", {
                     message: errors
                 })

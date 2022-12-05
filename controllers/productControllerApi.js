@@ -6,11 +6,12 @@ const controller = {
 	listAll: (req, res) => {
 
 		Product.findAll()
-			.then(pr => {
-				let parsedProducts = pr.map(el => { return el.dataValues }) 
+			.then(products => {
+				
 				return res.status(200).json({
 					status: 200,
-					products: parsedProducts
+					qty: products.length,
+					products: products
 				})
 			}).catch(errors => {
 				return res.json({
@@ -122,6 +123,39 @@ const controller = {
 				return res.status(200).json({
 					status: 200,
 					products: products
+				})
+			})
+			.catch(errors => {
+				return res.json({
+					message: errors
+				})
+			});
+	},
+
+	categories: (req, res) => {
+
+		Product.categories()
+			.then(categories => {
+				return res.status(200).json({
+					status: 200,
+					qty: categories.length,
+					categories: categories
+				})
+			})
+			.catch(errors => {
+				return res.json({
+					message: errors
+				})
+			});
+	},
+
+	lastProduct: (req, res) => {
+
+		Product.lastProduct()
+			.then(product => {
+				return res.status(200).json({
+					status: 200,
+					product: product
 				})
 			})
 			.catch(errors => {
