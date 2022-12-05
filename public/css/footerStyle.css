@@ -1,11 +1,6 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-
 footer {
     background-color: #ebebeb;
+    border-top: 1px solid black;
 }
 
 footer .cont-footer-uno img {
@@ -50,7 +45,6 @@ footer .cont-footer-base i {
 
 footer .copyright {
     display: block;
-    border-top: 1px solid black;
     text-align: center;
     margin-top: 5px;
     padding-top: 10px;
@@ -68,6 +62,9 @@ footer .cont-footer-dos {
     flex-grow: 0.5;
     flex-direction: row;
     flex-wrap: wrap;
+}
+.a-img{
+    padding-left: 120px;
 }
 a{
     text-decoration: none;

@@ -1,0 +1,21 @@
+<link rel='stylesheet' href='/css/product-list.css' />
+<script src="https://kit.fontawesome.com/9a1fccfd11.js" crossorigin="anonymous"></script>
+
+<div class="card">
+    <div class="item-main">
+        <div class="product-img">
+            <img src="/images/products/<%= product.img %>" class="img">
+        </div>
+    </div>
+        <div class="descriptions">
+            <p class="prod-name"><%= product.name  %> - <%= product.size  %> $<%= product.price  %></p>
+            <p class="prod-description"><%= product.category  %> - <%= product.sellingCategory %></p>
+            <p class="prod-description"><%= product.description  %></p>
+            <p class="prod-long-description"><%= product.longDescription  %></p>
+        </div>
+    <div class="btn-list">
+            <a href="/delete/<%=product.id%>"><button type="button"><i class="fa-solid fa-trash"></i></button></a>
+            <a href="/product/edit/<%= product.id%>"><button type="button"><i class="fa-solid fa-pen-to-square"></i></button></a>
+            <a href="/product/detail/<%=product.id%>"><button type="button"><i class="fa-solid fa-magnifying-glass"></button></i></a>
+        </div>
+</div>

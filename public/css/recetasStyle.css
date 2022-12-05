@@ -8,6 +8,7 @@
 body {
     margin: 0px;
     padding: 0px;
+    background-color: #ebebeb;
 }
 
 h3 {
@@ -17,7 +18,7 @@ h3 {
     margin: 32px auto;
     margin-bottom: 20px;
     text-align: center;
-}
+} 
 
 .container {
     display: flex;
@@ -29,9 +30,10 @@ h3 {
 
 .receta {
     width: 350px;
-    background-color: #ebebeb;
-    border: 1px solid gainsboro;
+    background-color: gainsboro;
+    border: 1px solid rgba(39, 39, 39);
     margin: 20px;
+    border-radius: 5px;
 }
 img{
     width: 100%;

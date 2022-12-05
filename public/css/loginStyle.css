@@ -13,7 +13,7 @@ body{
     margin: 20px auto;
     padding: 5px;
     width: 400px;
-    height: 400px;
+    height: 500px;
     background-color: gainsboro;
     border-radius: 10px;
 } 
@@ -84,6 +84,25 @@ input:focus::placeholder {
     transition: 0.4s;
 }
 
+.text-danger{
+    display:block;
+    border-radius: 3px;
+    background-color: rgb(129, 70, 70);
+    color: red(39, 39, 39);
+    border-color: rgb(92, 0, 0);
+    padding: 3px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 15px;
+    animation: 0.5s ease-out 0s 1 desdeIzq;
+}
+@keyframes  desdeIzq{
+    0% {transform: translateX(5%);}
+    25% {transform: translateX(-5%);}
+    50% {transform: translateX(5%);}
+    75% {transform: translateX(-5%);}
+    100% {transform: translateX(0%);}
+}
 
 @media (min-width: 361px){
 

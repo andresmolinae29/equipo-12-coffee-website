@@ -1,72 +1,47 @@
 <!DOCTYPE html>
-<html lang="es">
-<!-- Include Head -->
-
-<body>
-	<!-- Header -->
-	<%- include("./partials/header") %>
-	<!-- /Header -->
-
-	<!-- product detail -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Detalle del producto: <%= product.name %></h2>
-			</div>
-		</div>
-		<div class="product-detail">
-			<div class="row">
-				<div class="col-12 col-lg-8">
-					<img src="/images/products/<%= product.img %>" alt="product image" class="product-detail-img">
-					<p class="product-detail-description">
-						<%= product.description %>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> <%= product.name  %> - Mercadito de café</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://kit.fontawesome.com/9a1fccfd11.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/itemStyle.css">
+                
+    </head>
+    <body>
+        <%- include("./partials/header") %>
+        
+	<div class="body">
+		<div class="card">
+			<div class="product-img imgBox">
+					<img src="/images/products/<%= product.img %>" class="img">
+				</div>
+			<div class="text">
+				<div class="details">
+					<div class="title"><h3><%= product.name  %></h3>
+					<small> 
+						
+						<p class="prod-long-description"><%= product.description  %></p>
+					</small></div>
+				</div>
+				<div class="description">
+					<h4>Detalle</h4>
+					<p class="description">
+						<small> Presentación: <%= product.size  %> </small>
+						<br>
+						<%= product.longDescription  %>
 					</p>
 				</div>
-				<div class="col-12 col-lg-4">
-					<article class="product-detail-info">
-						<h2 class="product-detail-title"><%= product.name %></h2>
-						
-							<p class="product-detail-price small">
-								<span>$PRICE</span>
-								/
-								<b>$<%= product.discount %>% OFF</b>
-							</p>
-							<p class="product-detail-price">
-								$<%= product.price %>
-							</p>
-							<p class="product-detail-price">
-								$<%= product.price %>
-							</p>
 
-						<ul class="actions-list">
-							<li>
-								<i class="fas fa-credit-card"></i>
-								<p>Pagá en 12 cuotas sin interes</p>
-							</li>
-							<li>
-								<i class="fas fa-store"></i>
-								<p>Retiro gratis en locales del vendedor</p>
-							</li>
-						</ul>
-
-						<a href="#" class="buy-now-button">COMPRAR AHORA</a>
-						<hr>
-
-						<a href="/product/edit/<%= product.id %>" class="action-button edit">EDITAR PRODUCTO</a>
-
-						<form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-							<button type="submit" class="action-button delete">ELIMINAR</button>
-						</form>
-					</article>
+				<div class="btn">
+					<a href="#"><button type="button">Comprar<i class="fa-thin fa-cart-shopping-fast"></i></button></a>
+					<a href="#"><button type="button"><i class="fa-thin fa-cart-shopping"></i>Agregar al carrito</button></a>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- /product detail -->
 
-	<!-- footer -->
-	<%- include('partials/footer') %>
-	<!-- /footer -->
-
-</body>	
+        <%- include("./partials/footer") %>
+    </body>
 </html>

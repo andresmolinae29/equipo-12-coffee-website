@@ -29,10 +29,11 @@
                         class="field" 
                         placeholder="Email" 
                         name="email">
+                        <div class="errormsg">
                         <% if (locals.errors && errors.email) { %>
-                        <div class="text-danger">
+                        <p class="text-danger">
                             <%= errors.email.msg %>
-                        </div>
+                        </p>
                         <% } %>
                         <div class="text-danger" id="emailError"></div>
                 </div>
@@ -44,10 +45,11 @@
                         class="field" 
                         placeholder="Contraseña" 
                         name="password">
+                        <div class="errormsg">
                         <% if (locals.errors && errors.password) { %>
-                            <div class="text-danger">
+                            <p class="text-danger">
                                 <%= errors.password.msg %>
-                            </div>
+                            </p>
                             <% } %>
                         <div class="text-danger" id="passwordError"></div>
                 </div>
