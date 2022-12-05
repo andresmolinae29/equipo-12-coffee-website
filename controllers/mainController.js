@@ -1,9 +1,6 @@
 const { setRandomFallback } = require('bcryptjs');
 const { getProducts, getFilterProducts } = require('../services/productService');
 
-// const response = await getProducts();
-        // console.log(response);
-
 const mainController = {
 
     index: async (req, res) => {
@@ -32,6 +29,10 @@ const mainController = {
     productos: async (req, res) => {
         const products = await getProducts();
         return res.render("productos", { products : products.products } )
+    },
+    management: async (req, res) => {
+        const products = await getProducts();
+        return res.render("product-management", { products : products.products })
     },
 }
 

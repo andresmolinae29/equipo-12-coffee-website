@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const validateCreateProductForm = require('../middlewares/validateCreateProductMiddleware');
-
+const login = require('../middlewares/guestMiddleware');
 // ************ Middelwares ************
 const productController = require('../controllers/productController');
 
@@ -23,7 +23,7 @@ const storage = multer.diskStorage({
 
 const uploadFile = multer({ storage })
 
-router.get('/create', productController.create);
+router.get('/create', login, productController.create);
 
 router.post(
 	'/create',
@@ -38,7 +38,7 @@ router.get('/edit/:id', productController.edit);
 router.put(
 	'/edit/:id',
 	uploadFile.single('img'),
-	// validateCreateProductForm,
+	//validateCreateProductForm,
 	productController.editProcess
 	);
 

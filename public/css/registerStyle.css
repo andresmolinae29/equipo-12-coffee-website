@@ -9,13 +9,14 @@ body{
     background-color: #ebebeb;
 }
 
-.container{
+.cont-form {
     margin: 20px auto;
     padding: 5px;
     width: 400px;
-    height: 800px;
+    height: 900px;
     border-radius: 10px;
-} 
+    background-color: gainsboro;
+}
 
  h3{
     width: 50%;
@@ -95,15 +96,6 @@ form .field{
 .input-select{
     padding-left: 14%;
 } 
-#ubicacion {
-    width: 68%;
-    height: 4.5vh;
-    border-radius: 3px;
-}
-
-#ubi-select {
-    text-align: center;
-}
 
 .btn-save{
     background-color: rgb(39, 39, 39);
@@ -128,6 +120,25 @@ form .field{
     border: 2px solid #6e6e6e;
 }
 
+.text-danger{
+    display:block;
+    border-radius: 3px;
+    background-color: rgb(129, 70, 70);
+    color: red(39, 39, 39);
+    border-color: rgb(92, 0, 0);
+    padding: 3px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 15px;
+    animation: 0.5s ease-out 0s 1 desdeIzq;
+}
+@keyframes  desdeIzq{
+    0% {transform: translateX(5%);}
+    25% {transform: translateX(-5%);}
+    50% {transform: translateX(5%);}
+    75% {transform: translateX(-5%);}
+    100% {transform: translateX(0%);}
+}
 
 @media (min-width: 361px){
 

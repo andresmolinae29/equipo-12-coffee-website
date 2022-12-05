@@ -14,13 +14,9 @@
 <body>
     <%- include("./partials/header") %>
 
-        <div class="container">
+        <div class="cont-form">
             <h3>Registrarse</h3>
-            <% if (locals.errors && errors) { %>
-                <div class="text-danger">
-                    <%= errors %>
-                </div>
-                <% } %>
+
             <form action="/user/register" method="POST" enctype="multipart/form-data">
                 <div>
                     <label for="fullName" class="label-input"></label>
@@ -34,9 +30,9 @@
                             value = "<%= oldData.fullName %>"
                         <% } %>>
                         <% if (locals.errors && errors.fullName) { %>
-                        <div class="text-danger">
+                        <p class="text-danger">
                             <%= errors.fullName.msg %>
-                        </div>
+                        </p>
                         <% } %>
                 </div>
                 <div>
@@ -119,7 +115,6 @@
         </div>
 
         <%- include("./partials/footer") %>
-            <!-- <script src="./js/registerUser.js"></script> -->
 </body>
 
 </html>

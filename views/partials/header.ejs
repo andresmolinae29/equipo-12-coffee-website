@@ -10,11 +10,20 @@
             <li><a href="/productos">Productos</a></li>
             <li><a href="/recetas">Recetas</a></li>
         </ul>
+        <% // %>
         <ul class = "caja-dos">
             <li><a href="/cart">Carrito</a></li>
             <li>0</li>
             <li><a href="/user/login">Entra</a></li>
             <li><a href="/user/register">Registrate</a></li>
         </ul>
+        <% /* %>
+            <ul class = "caja-dos">
+                <li><a href="/cart">Carrito</a></li>
+                <li>0</li>
+                <li><a href="/<%= user.username  %>/profile">Bienvenido, <%= users.username  %></a></li>
+                <form action="/logout?_method=DELETE" method="POST"><button type="submit">Salir</button></form>
+            </ul>
+        <%*/%>
     </nav>
 </header>
