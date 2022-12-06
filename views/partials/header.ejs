@@ -20,13 +20,13 @@
         <%}%>
         <% if (locals.userLogged && locals.userLogged.type != 'admin'){%>
             <div>
-                Bienvenido <%= locals.userLogged.fullName  %> 
+                <li><a href="/user/profile">Bienvenido, <%= locals.userLogged.fullName %></a></li> 
                 <form action="/user/logout" method="GET"><button type="submit">Salir</button></form>
             </div>
             <%}%>
         <% if (locals.userLogged && locals.userLogged.type == 'admin') {%>
             <ul class = "caja-dos">
-            <li>Bienvenido, <%= locals.userLogged.fullName %></a></li>
+            <li><a href="/user/profile">Bienvenido, <%= locals.userLogged.fullName %></a></li>
             <li><a href="/product/manage-products">Manejar productos</a></li>
             <form action="/user/logout" method="GET"><button type="submit">Salir</button></form>
         </ul>

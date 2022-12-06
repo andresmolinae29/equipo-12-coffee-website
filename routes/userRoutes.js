@@ -44,6 +44,11 @@ router.get(
 	guestMiddleware,
 	userController.login
 	);
+	//hice la ruta aca del profile con el Middleware
+router.get(
+		'/user/profile', 
+		guestMiddleware
+		);
 
 router.post(
 	'/login', 

@@ -36,8 +36,8 @@ const userController = {
                     if (req.body.rememberMe) {
                         res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60})
                     }
-
-                    return res.redirect("/");
+                    // cambie esto de "/" a "/profile" para que al loguear vaya al perfil
+                    return res.redirect("/user/profile");
                 }
 
             })
