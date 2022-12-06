@@ -21,6 +21,30 @@ body{
     margin-top: 6%;
     margin-bottom: 7%;
 }
+.plus-button {
+    border: none;
+    display: flex;
+    margin: 25px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(39, 39, 39);
+    color: gainsboro;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    transition: border .2s, background-color .3s;
+}
+
+.plus-button:hover {
+    background-color: #888888;
+    border: 2px solid #6e6e6e;
+}
+    
+.plus-button:active {
+    background-color: black;
+    border: 2px solid #6e6e6e;
+}
 
 @media (min-width: 361px){
 
