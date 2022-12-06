@@ -83,16 +83,16 @@ input:focus::placeholder {
     color: transparent;
     transition: 0.4s;
 }
-span{
+
+.text-danger{
     display:block;
-    text-align: center;
     border-radius: 3px;
     background-color: rgb(129, 70, 70);
     color: red(39, 39, 39);
     border-color: rgb(92, 0, 0);
-    width: 250px;
-    margin-left: 7%;
     padding: 3px;
+    margin-left: 60px;
+    margin-right: 60px;
     margin-bottom: 15px;
     animation: 0.5s ease-out 0s 1 desdeIzq;
 }

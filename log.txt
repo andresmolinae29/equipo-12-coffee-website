@@ -4759,3 +4759,10 @@ Se ingreso en la pagina/product/detail/2
 Se ingreso en la pagina/api/product/detail/2
 Se ingreso en la pagina/product/detail/2
 Se ingreso en la pagina/api/product/detail/2
+Se ingreso en la pagina/
+Se ingreso en la pagina/api/product/getFiltered?category=new
+Se ingreso en la pagina/api/product/getFiltered?category=sale
+Se ingreso en la pagina/user/login
+Se ingreso en la pagina/user/register
+Se ingreso en la pagina/user/login
+Se ingreso en la pagina/user/login

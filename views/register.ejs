@@ -18,9 +18,9 @@
         <div class="cont-form">
             <h3>Registrarse</h3>
             <% if (locals.message && message) { %>
-                <span class="text-danger">
+                <div class="text-danger">
                     <%= message %>
-                </span>
+                </div>
                 <% } %>
             <form action="/user/register" method="POST" enctype="multipart/form-data">
                 <div>
@@ -35,9 +35,9 @@
                             value = "<%= oldData.fullName %>"
                         <% } %>>
                         <% if (locals.errors && errors.fullName) { %>
-                        <span class="text-danger">
+                        <div class="text-danger">
                             <%= errors.fullName.msg %>
-                        </span>
+                        </div>
                         <% } %>
                         <div class="text-danger" id="nameError"></div>
                 </div>
@@ -53,9 +53,9 @@
                             value = <%= oldData.userName %> 
                         <% } %>>
                         <% if (locals.errors && errors.userName) { %>
-                        <span class="text-danger">
+                        <div class="text-danger">
                             <%= errors.userName.msg %>
-                        </span>
+                        </div>
                         <% } %>
                         <div class="text-danger" id="userNameError"></div>
                 </div>
@@ -68,9 +68,9 @@
                         placeholder="Contraseña" 
                         name="password">
                         <% if (locals.errors && errors.password) { %>
-                            <span class="text-danger">
+                            <div class="text-danger">
                                 <%= errors.password.msg %>
-                            </span>
+                            </div>
                             <% } %>
                             <div class="text-danger" id="passwordError"></div>
                 </div>
@@ -83,9 +83,9 @@
                         placeholder="Confirmar contraseña"
                         name="passwordConfirmation">
                         <% if (locals.errors && errors.passwordConfirmation) { %>
-                            <span class="text-danger">
+                            <div class="text-danger">
                                 <%= errors.passwordConfirmation.msg %>
-                            </span>
+                            </div>
                             <% } %>
                             <div class="text-danger" id="passwordConfirmationError"></div>
                 </div>
@@ -101,9 +101,9 @@
                             value = <%= oldData.email %> 
                         <% } %>>
                         <% if (locals.errors && errors.email) { %>
-                        <span class="text-danger">
+                        <div class="text-danger">
                             <%= errors.email.msg %>
-                        </span>
+                        </div>
                         <% } %>
                         <div class="text-danger" id="emailError"></div>
 

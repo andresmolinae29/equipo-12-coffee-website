@@ -16,9 +16,9 @@
             <div class="container">
                 <h3>Ingresar</h3>
                 <% if (locals.message && message) { %>
-                    <span class="text-danger">
+                    <div class="text-danger">
                         <%= message %>
-                    </span>
+                    </div>
                     <% } %>
             <form action="/user/login" method="POST">
                 <div>
@@ -30,9 +30,9 @@
                         placeholder="Email" 
                         name="email">
                         <% if (locals.errors && errors.email) { %>
-                        <span class="text-danger" id="emailError">
+                        <div class="text-danger" id="emailError">
                             <%= errors.email.msg %>
-                        </span>
+                        </div>
                         <% } %>  
                 </div>
                 <div>
@@ -44,9 +44,9 @@
                         placeholder="Contraseña" 
                         name="password">
                         <% if (locals.errors && errors.password) { %>
-                            <span class="text-danger" id="passwordError">
+                            <div class="text-danger" id="passwordError">
                                 <%= errors.password.msg %>
-                            </span>
+                            </div>
                             <% } %>
                         
                 </div>
