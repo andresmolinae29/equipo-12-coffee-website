@@ -56,7 +56,9 @@ const productController = {
                     return res.render("product-edit-form", { productToEdit : response.product[0]});
                 } else {
                     // Colocar aca redireccion a error 404
-                    return res.redirect("/", { message : "El producto no existe"});
+                    return res.redirect("404", 
+                    // { message : "El producto no existe"}
+                    );
                 }
                 
             })
@@ -72,11 +74,15 @@ const productController = {
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
+
+            console.log(resultValidation.mapped());
         
-            return res.render("product-edit-form", {
-                errors: resultValidation.mapped(),
-                productToEdit: req.body
-            })
+            return res.redirect("/product/edit/" + req.params.id, 
+            // {
+            //     errors: resultValidation.mapped(),
+            //     productToEdit: req.body
+            // }
+            )
         }
 
         let data = null;
@@ -94,6 +100,8 @@ const productController = {
         }
 
         const id = req.params.id;
+
+        console.log(data);
 
         editProduct(id, data)
             .then(productEditted => {

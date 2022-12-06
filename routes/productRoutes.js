@@ -42,7 +42,7 @@ router.get('/edit/:id', productController.edit);
 router.put(
 	'/edit/:id',
 	uploadFile.single('img'),
-	//validateCreateProductForm,
+	validateCreateProductForm,
 	productController.editProcess
 	);
 
