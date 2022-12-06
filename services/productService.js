@@ -25,7 +25,7 @@ const createProduct = (data) => {
 }
 
 const deleteOneProduct = (id) => {
-    return axios.get("http://localhost:3000/api/product/delete/" + id)
+    return axios.delete("http://localhost:3000/api/product/delete/" + id)
         .then(response => { return response.data })
         .catch(error => { return error });;
 }

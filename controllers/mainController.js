@@ -25,15 +25,10 @@ const mainController = {
     recetas: (req, res) => {
         return res.render("recetas")
     },
-
     productos: async (req, res) => {
         const products = await getProducts();
         return res.render("productos", { products : products.products } )
-    },
-    management: async (req, res) => {
-        const products = await getProducts();
-        return res.render("product-management", { products : products.products })
-    },
+    }
 }
 
 module.exports = mainController;

@@ -10,20 +10,26 @@
             <li><a href="/productos">Productos</a></li>
             <li><a href="/recetas">Recetas</a></li>
         </ul>
-        <% // %>
+        <% if (!locals.userLogged){%>
         <ul class = "caja-dos">
             <li><a href="/cart">Carrito</a></li>
             <li>0</li>
             <li><a href="/user/login">Entra</a></li>
             <li><a href="/user/register">Registrate</a></li>
         </ul>
-        <% /* %>
+        <%}%>
+        <% if (locals.userLogged && locals.userLogged.type != 'admin'){%>
+            <div>
+                Bienvenido <%= locals.userLogged.fullName  %> 
+                <form action="/user/logout" method="GET"><button type="submit">Salir</button></form>
+            </div>
+            <%}%>
+        <% if (locals.userLogged && locals.userLogged.type == 'admin') {%>
             <ul class = "caja-dos">
-                <li><a href="/cart">Carrito</a></li>
-                <li>0</li>
-                <li><a href="/<%= user.username  %>/profile">Bienvenido, <%= users.username  %></a></li>
-                <form action="/logout?_method=DELETE" method="POST"><button type="submit">Salir</button></form>
-            </ul>
-        <%*/%>
+            <li>Bienvenido, <%= locals.userLogged.fullName %></a></li>
+            <li><a href="/product/manage-products">Manejar productos</a></li>
+            <form action="/user/logout" method="GET"><button type="submit">Salir</button></form>
+        </ul>
+        <%}%>
     </nav>
 </header>

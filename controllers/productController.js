@@ -1,4 +1,4 @@
-const { createProduct, getOneProduct, editProduct } = require('../services/productService');
+const { createProduct, getOneProduct, editProduct, getProducts, deleteOneProduct } = require('../services/productService');
 const { validationResult } = require('express-validator');
 
 const productController = {
@@ -69,31 +69,36 @@ const productController = {
 
     editProcess: (req, res) => {
 
-        // const resultValidation = validationResult(req);
+        const resultValidation = validationResult(req);
 
-        // if (resultValidation.errors.length > 0) {
+        if (resultValidation.errors.length > 0) {
         
-        //     return res.render("product-edit-form", {
-        //         errors: resultValidation.mapped(),
-        //         productToEdit: req.body
-        //     })
-        // }
+            return res.render("product-edit-form", {
+                errors: resultValidation.mapped(),
+                productToEdit: req.body
+            })
+        }
 
-        let filename = req.file ? req.file.filename : "img-default.jpg";
+        let data = null;
 
-
-        const data = {
-            ...req.body,
-            img: filename
+        if (req.file) {
+            let filename = req.file.filename;
+            data = {
+                ...req.body,
+                img: filename
+            };  
+        } else {
+            data = {
+            ...req.body
         };
+        }
 
         const id = req.params.id;
-
 
         editProduct(id, data)
             .then(productEditted => {
  
-                return res.redirect("/product/detail/"+id);
+                return res.redirect("/product/manage-products");
             })
             .catch(errors => {
    
@@ -124,6 +129,26 @@ const productController = {
                     message: errors
                 })
             })  
+    },
+
+    management: async (req, res) => {
+        const products = await getProducts();
+        return res.render("product-management", { products : products.products })
+    },
+
+    deleteProduct: (req, res) => {
+        const id = req.params.id;
+
+        deleteOneProduct(id)
+            .then(productDeleted => {
+                return res.redirect("/product/manage-products");
+            })
+            .catch(errors => {
+   
+                return res.render("404", {
+                    message: errors
+                })
+            })
     }
 
 }
