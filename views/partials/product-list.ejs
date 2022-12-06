@@ -14,7 +14,9 @@
             <p class="prod-long-description"><%= product.longDescription  %></p>
         </div>
     <div class="btn-list">
-            <a href="/delete/<%=product.id%>"><button type="button"><i class="fa-solid fa-trash"></i></button></a>
+        <form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST">
+            <button type="submit"><i class="fa-solid fa-trash"></i></button>
+        </form>
             <a href="/product/edit/<%= product.id%>"><button type="button"><i class="fa-solid fa-pen-to-square"></i></button></a>
             <a href="/product/detail/<%=product.id%>"><button type="button"><i class="fa-solid fa-magnifying-glass"></button></i></a>
         </div>

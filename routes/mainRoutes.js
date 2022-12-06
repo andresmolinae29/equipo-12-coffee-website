@@ -13,6 +13,4 @@ router.get('/recetas', mainController.recetas);
 
 router.get('/productos', mainController.productos);
 
-router.get('/manage-products', mainController.management);
-
 module.exports = router
