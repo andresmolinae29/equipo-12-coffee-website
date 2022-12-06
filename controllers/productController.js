@@ -101,8 +101,6 @@ const productController = {
 
         const id = req.params.id;
 
-        console.log(data);
-
         editProduct(id, data)
             .then(productEditted => {
  

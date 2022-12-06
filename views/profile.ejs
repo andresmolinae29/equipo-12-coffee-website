@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title> <%= product.name  %> - Mercadito de café</title>
+        <!-- <title> - Mercadito de café</title> -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="https://kit.fontawesome.com/9a1fccfd11.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
@@ -15,14 +15,13 @@
 	<div class="body">
 		<div class="card">
 			<div class="product-img imgBox">
-					<img src="/images/user/<%= locals.userLogged.img %>" class="img">
+					<img src="/images/users/<%=locals.userLogged.avatar%>" class="img">
 				</div>
 			<div class="text">
 				<div class="details">
-					<div class="title"><h3><%= locals.userLogged.username  %></h3>
-						<div class="price">$<%= locals.userLogged.fullName %></div>
+					<div class="title"><h3><%= locals.userLogged.userName  %></h3>
+						<div class="price"><%= locals.userLogged.fullName %></div>
 						<small> 
-						
 						<p class="prod-long-description"><%= locals.userLogged.type  %></p>
 					</small></div>
 				</div>
