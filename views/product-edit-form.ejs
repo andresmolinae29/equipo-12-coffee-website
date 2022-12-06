@@ -38,7 +38,7 @@
 						<select name="sellingCategory" id="sellingCategory" class="form-input">
 							<option disabled selected>Tipo de venta</option>
 							<option value="in-sale" <%= (productToEdit.sellingCategory == "in-sale")? "selected":"" %> >En oferta</option>
-							<option value="visited" <%= (productToEdit.sellingCategory == "visited")? "selected":"" %> >Últimos agregados</option>
+							<option value="visited" <%= (productToEdit.category == "visited")? "selected":"" %> >Últimos agregados</option>
 						</select>
 					</div>
 					<div>
