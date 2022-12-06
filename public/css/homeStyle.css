@@ -8,9 +8,8 @@ body{
 
 .products {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
     justify-content: center;
-    margin-left: 30px;
 }
 
 .container-filtred {
@@ -106,17 +105,19 @@ body{
 }
 
 
-@media (min-width: 361px){
-
-    
+@media (max-width: 361px){
+    .err404{
+        display: flex;
+    }
+    .err404 img{
+        max-width: 100%;
+        height: auto;
+        padding-right: 17%;
+    }
     
 }
 
 @media (max-width: 769px){
-    .products {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: center;
-    }
+   
     
 }

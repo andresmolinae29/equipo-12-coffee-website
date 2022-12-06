@@ -12,19 +12,27 @@
     min-height: 60vh;
     background-color: #ebebeb;
 }
+@media (min-width: 769px){
+    
 .card {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 600px;
-    height: 400px;
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 400px;
     background-color: gainsboro;
     border-radius: 5px;
-    padding: 20px;
+    padding: 6%;
+}
+.card h3{
+    display: block;
+    margin-bottom: 15%;
 }
 .card .img{
     position: relative;
-    width: 300px;
+    width: 100%;
     min-width: 300px;
     display: flex;
     justify-content: center;
@@ -33,21 +41,25 @@
 .card .details{
     position: relative;
     min-width: 300px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
     padding: 20px;
 }
+.card .price{
+    padding-top: 1%;
+}
 h4{
-    padding-left: 7px;
+    padding-left: 2%;
 }
 .description{
-    padding-left: 15px;
+    padding-left: 3%;
 }
 
 button {
-    margin: 20px;
+    margin: 7%;
     background-color: rgba(39, 39, 39);
     color: gainsboro;
     cursor: pointer;
@@ -64,8 +76,38 @@ button:active {
     background-color: black;
     border: 2px solid #6e6e6e;
 }
+}
 
+@media (max-width: 769px){
+    
+    .card .img{
+        position: relative;
+        margin-left: 100%;
+        margin-bottom: 100%;
+        width: 100%;
+        max-width: 280px;
+        display: flex;
+    }
 
+    .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        max-width: 500px;
+        max-height: 400px;
+        background-color: gainsboro;
+        border-radius: 5px;
+        padding: 6%;
+    }
+
+    .card h3{
+        display: relative;
+        margin-bottom: 15%;
+    }
+
+}
 
 
 

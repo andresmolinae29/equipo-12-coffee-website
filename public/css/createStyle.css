@@ -133,16 +133,36 @@ span{
 
 @media (min-width: 361px){
 
+    .product-detail{
+        width: 150%;
+        margin-left: -5%;
+    }
+
+    span{
+      width: 170px;
+      display: flex;
+      margin-left: -5%;
+    }
     .input-select {
         width: 102%;
-        margin-left: 26px;
     }
 }
 
 @media (min-width: 769px){
 
-    .columna-form:not(.btn-save) {
-        float: left;
-        width: 50%;    
-      }
+    .product-detail{
+        width: 150%;
+        margin-left: -5%;
+    }
+
+    span{
+      width: 170px;
+      display: flex;
+      margin-left: -5%;
+    }
+    .input-select {
+        width: 102%;
+    }
+
+
 }

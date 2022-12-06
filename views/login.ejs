@@ -16,9 +16,9 @@
             <div class="container">
                 <h3>Ingresar</h3>
                 <% if (locals.message && message) { %>
-                    <div class="text-danger">
+                    <span class="text-danger">
                         <%= message %>
-                    </div>
+                    </span>
                     <% } %>
             <form action="/user/login" method="POST">
                 <div>
@@ -29,13 +29,11 @@
                         class="field" 
                         placeholder="Email" 
                         name="email">
-                        <div class="errormsg">
                         <% if (locals.errors && errors.email) { %>
-                        <p class="text-danger">
+                        <span class="text-danger" id="emailError">
                             <%= errors.email.msg %>
-                        </p>
-                        <% } %>
-                        <div class="text-danger" id="emailError"></div>
+                        </span>
+                        <% } %>  
                 </div>
                 <div>
                     <label for="password" class="label-input"></label>
@@ -45,20 +43,18 @@
                         class="field" 
                         placeholder="Contraseña" 
                         name="password">
-                        <div class="errormsg">
                         <% if (locals.errors && errors.password) { %>
-                            <p class="text-danger">
+                            <span class="text-danger" id="passwordError">
                                 <%= errors.password.msg %>
-                            </p>
+                            </span>
                             <% } %>
-                        <div class="text-danger" id="passwordError"></div>
+                        
                 </div>
                 <div>
                 <label class="checkRecordar" for="recordar">Recordarme
                     <input type="checkbox" style="margin-left: 10px;" name="rememberMe" id="recordar">
                 </label></div>
                 <div><input class="btn" type="submit" value="Ingresar"></div>
-                <h6 class="recuperarContrasena"><a href="#"> ¿Olvidaste tu contraseña? </a></h6>
             </form>
         </div>
         <%- include("./partials/footer") %>

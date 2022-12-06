@@ -58,6 +58,10 @@ section h4 {
 .tabla-carrito td, th {
     flex: 1 1 150px;
 }
+td img{
+    max-width: 150px;
+    height: auto;
+}
 
 form input, form label select {
     margin-top: 4px;
@@ -110,9 +114,6 @@ form input, form label select {
 }
 
 .subtotal-table {
-    /* margin: auto; */
-    /* width: 100%; */
-    /* border-collapse: collapse; */
     table-layout:fixed;
 }
 
