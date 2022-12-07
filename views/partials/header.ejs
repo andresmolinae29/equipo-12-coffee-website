@@ -25,10 +25,10 @@
             </div>
             <%}%>
         <% if (locals.userLogged && locals.userLogged.type == 'admin') {%>
-            <ul class = "caja-dos">
+            <ul class = "caja-login">
             <li><a href="/user/profile">Bienvenido, <%= locals.userLogged.fullName %></a></li>
             <li><a href="/product/manage-products">Manejar productos</a></li>
-            <form action="/user/logout" method="GET"><button type="submit">Salir</button></form>
+            <form action="/user/logout" method="GET"><button class=".logout-button" type="submit">Salir</button></form>
         </ul>
         <%}%>
     </nav>

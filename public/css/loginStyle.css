@@ -83,6 +83,13 @@ input:focus::placeholder {
     color: transparent;
     transition: 0.4s;
 }
+.checkRecordar{
+    font-weight: 550;
+}
+
+.text-danger:empty{
+    display: none;
+}
 
 .text-danger{
     display:block;
