@@ -46,7 +46,7 @@
                         name="password">
                         <% if (locals.errors && errors.password) { %>
                             <div class="text-danger" id="passwordError">
-                                <%= errors.password.msg %>
+                                <span><%= errors.password.msg %></span>
                             </div>
                             <% } %>
                         <div class="text-danger" id="passwordError"></div>

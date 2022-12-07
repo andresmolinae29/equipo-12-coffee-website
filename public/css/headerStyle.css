@@ -10,6 +10,7 @@ header {
 
 header img {
     width: 150px;
+    margin-left: 7%;
 }
 
 .contenedor-header {
@@ -17,7 +18,6 @@ header img {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    flex-wrap: wrap;
 }
 
 .contenedor-header img {
@@ -47,7 +47,16 @@ header .contenedor-nav {
     background-color: gainsboro;
     justify-content: center;
     text-align: center; 
+    align-items: center;
     margin: auto;
+    flex-direction: column;
+}
+.caja-login {
+    display: flex;
+    border-radius: 30px;
+    background-color: gainsboro;
+    justify-content: center;
+    text-align: center; 
     flex-direction: column;
 }
 
@@ -91,6 +100,25 @@ header .contenedor-nav {
     width: 100%;
     opacity: 50%;
 }
+.logout-button {
+    margin: 7%;
+    padding: 3% 6% 3%;
+    background-color: rgba(39, 39, 39);
+    color: gainsboro;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: border .2s, background-color .3s;
+}
+
+.logout-button :hover {
+    background-color: #888888;
+    border: 2px solid #6e6e6e;
+}
+    
+.logout-button :active {
+    background-color: black;
+    border: 2px solid #6e6e6e;
+}
 
 
 
@@ -116,7 +144,7 @@ header .contenedor-nav {
         flex-grow: 30%;
         justify-content: center;
         text-align: center; 
-        margin: auto;
+        margin: 23%;
     }
 
 }
